@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+{% for rs in header %}
 <head>
     <!-- Google Tag Manager -->
     <script>
@@ -322,7 +323,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="og-section pb-2">
             <ul class="nav nav-fill og-block">
                 <li class="nav-item enqModal" data-form="lg" data-title="Pre Register" data-btn="Register Now " data-enquiry="Organize Site Visit" data-toggle="modal" data-target="#enqModal">Pre Register</li>
-                <li class="nav-item driftc"><a href="tel:+912246180701" class="textcolor"><i class="fa-solid fa-phone-volume"></i> +912246180701</a></li>
+                <li class="nav-item driftc"><a href="tel:+91{{rs.cuntact_no}}" class="textcolor"><i class="fa-solid fa-phone-volume"></i> +91{{rs.cuntact_no}}</a></li>
             </ul>
             <button class="btn btn-sm btn-info micro-form-btn-sm effetGradient effectScale enqModal mt-1" data-form="sm" data-title="Immediate Call Back" data-btn="Request Call Now" data-enquiry="Request Call Back" data-toggle="modal" data-target="#enqModal">
                         <span class="fa-solid fa-phone-volume"></span> Instant Call Back</button>
@@ -907,7 +908,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <!--Privacy Policy LINK-->
                     <small class="modal-call-btn">
     <!--CONTACT NO-->
-            <a href="tel:+912246180701" aria-label="Contact No."  class="modal-call-btn" style="display: inline-block;justify-content: center;width: fit-content;padding: 0.5rem 1rem; margin-bottom: 0.5rem; background-color: var(--colorPrimary);color: var(--colorBtn);text-decoration: none;border-radius: 4px;"><i class="mi mi-call"></i>+912246180701</a>
+            <a href="tel:+91{{rs.cuntact_no}}" aria-label="Contact No."  class="modal-call-btn" style="display: inline-block;justify-content: center;width: fit-content;padding: 0.5rem 1rem; margin-bottom: 0.5rem; background-color: var(--colorPrimary);color: var(--colorBtn);text-decoration: none;border-radius: 4px;"><i class="mi mi-call"></i>+91{{rs.cuntact_no}}</a>
     </small>
                 </div>
             </div>
@@ -1158,3 +1159,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </body>
 
 </html>
+{% endfor %}

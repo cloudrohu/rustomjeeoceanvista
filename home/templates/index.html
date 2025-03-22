@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block body %}
+{% for rs in header %}
 <main class="pload">
     <style>
         .card-d-custom {
@@ -350,6 +351,6 @@ We are an authorised marketing partner for this project. Provided content is giv
 </small>
         </section>
     </main>
-
+    {% endfor %}
 
 {% endblock body %}
