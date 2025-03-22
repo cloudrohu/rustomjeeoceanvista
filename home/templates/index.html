@@ -1,0 +1,355 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<main class="pload">
+    <style>
+        .card-d-custom {
+            width: 95%;
+            justify-content: center;
+            text-align: center;
+            margin: 0 auto 15px;
+        }
+    </style>
+    <div id="home" class="carousel slide micro-main-slider" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#home" data-slide-to="0" class="active"></li>
+            <li data-target="#home" data-slide-to="1"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item lazyloaded">
+                <div class="desktopview"><img alt="Rustomjee Ocean Vista" width="1200" height="400" class="d-block micro-main-slider-img" src="{% static '' %}assets/img/deskban1.webp" fetchpriority="high" /></div>
+            </div>
+            <div class="carousel-item lazyloaded">
+                <div class="desktopview"><img alt="Rustomjee Ocean Vista" width="1200" height="400" class="d-block micro-main-slider-img" src="{% static '' %}assets/img/deskanner_11.webp" fetchpriority="low" /></div>
+            </div>
+
+        </div>
+    </div>
+    <div class="info-box overflow-hidden">
+        <!--<span class="pro-status">Booking Open: Limited Time Only</span>-->
+        <div class="wrapper offer-bg-animation">
+            <span class="zoom-in-zoom-out padding10">Booking Open: Limited Time Only</span>
+        </div>
+        <h1 class="pro-title">
+            Rustomjee Ocean Vista
+
+        </h1>
+        <div style="flex-wrap: wrap; display: inline-flex;padding-bottom: 10px;">
+            <span class="pro-add">At Versova</span>
+            <span class="pro-dev">by Rustomjee Group</span>
+        </div>
+        <div class="card-d card-d-custom">
+            <div>
+                <span class="heading2">Land Parcel </span>
+                <span class="heading1">0.5 Acre</span>
+            </div>
+            <div>
+                <span class="heading2">Floors </span>
+                <span class="heading1">G + 24 Floors</span>
+            </div>
+            <div>
+                <span class="heading2">Possession </span>
+                <span class="heading1">December 2027</span>
+            </div>
+        </div>
+        <span class="d-block mb-1 text-capitalize of-box offer-bg-animation">
+          <span class="offer-text-outer"> <span class="offer-text"> 
+         Spot Booking Offers<br/> Early Buy Discounts <br/> Flexipay For First 100 Customers</span>
+        </span>
+        </span>
+        <span class="d-block" style="font-size: 14px; width: 100%; background: transparent; font-weight: bold; text-align: center; color: #fff;">
+    </span>
+        <span class="pro-tag-line"> Luxurious<b> 4 BHK </b>  Starts  at</span> <span class="pro-price">₹ 22 Cr  <small style="font-size:16px;">  Onwards</small> </span>
+        <button class="btn btn-info micro-form-btn enqModal effetMoveGradient effectScale" data-form="lg" data-title="Download Brochure" data-btn="Download Now" data-enquiry="Download Brochure Left Panel" data-redirect="enquiry" data-toggle="modal" data-target="#enqModal">
+        Download Brochure
+    </button>
+    </div>
+    <section class="section shadow-sm lazyload" id="overview">
+        <h2 class="d-block section-heading color-primary text-capitalize">Welcome to Rustomjee Ocean Vista</h2>
+        <p>Rustomjee Ocean Vista is an upcoming sea touch residential community in Versova. It offers 4 BHK luxurious and spacious apartments and a provision of Jodi apartments. The Vastu-compliant residences are equipped with the finest design, contemporary
+            features and branded fixtures. Moreover, this gated community presents a wide variety of modern amenities like a swimming pool, banquet hall, banquet hall, alfresco lounge, gymnasium, multipurpose lawn, jogging track, kids’ play area and
+            more.
+
+
+
+        </p>
+        <p><span class="more-cont" style="display: none;"><span class="d-block">The neighbourhood has every facility such as schools, hospitals, shopping malls and commercial parks. Orchids The International School, Kokilaben Dhirubhai Ambani Hospital, St. Antony’s High School, Belle Vue Multispeciality Hospital, Pinnacle Business Park, Dmart and Infiniti Mall are nearby. The Versova metro station and Juhu Versova Link Road offer smooth connectivity to the central suburbs and South Mumbai. Both domestic and international airports are just a 30-minute drive away. Rustomjee Ocean Vista is an elite seaside community offering an affluent lifestyle in Versova.
+</span></span> <a href="#!" class="btn btn-link btn-sm more">Read more</a></p>
+        <button class="btn btn-info micro-form-btn effetMoveGradient enqModal" data-form="md" data-title="Download Brochure" data-btn="Download Now" data-enquiry="Download Brochure Welcome Text" data-redirect="brochure" data-redirect-file="brochure.pdf" data-toggle="modal"
+            data-target="#enqModal">
+<span class="d-inline-block fa fa-download mr-1 animated slideInDown infinite"></span> Download Brochure
+</button>
+    </section>
+    <section class="section shadow-sm lazyload" id="pricing">
+        <span class="section-link"></span>
+        <span class="head text-capitalize">Price</span>
+        <div class="row">
+            <div class="col-md-8">
+                <table class="table table-striped table-borderless border micro-price-table table-pricing">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="border border-bottom-0 mb-w">Type</th>
+                            <th scope="col" class="border border-bottom-0 mb-w">Carpet Area</th>
+                            <th scope="col" class="border border-bottom-0 border-right-0">Price</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border border-left-0 border-top-0 border-bottom-0 price-type">4 BHK</td>
+                            <td class="border border-left-0 border-top-0 border-bottom-0 price-carpet">
+                                2394-2521 Sq.ft.
+                                <small class="d-inline-block d-md-none">(Carpet Area)</small></td>
+                            <td class="price-amt"><i class="mi mi-rs-light"></i> 22 Cr Onwards
+                            </td>
+                            <td>
+                                <button class="btn btn-sm btn-info effetGradient effectScale enqModal" data-form="lg" data-title="Send me costing details" data-btn="Send Now" data-enquiry="Price Breakup" data-redirect="floorplan" data-toggle="modal" data-target="#enqModal">Price Breakup</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <a href="#" class="text-decoration-none enqModal" data-form="lg" data-title="Send me costing details" data-btn="Send Now" data-enquiry="Complete Costing Details" data-toggle="modal" data-target="#enqModal">
+                    <div class="at-property-item shadow-sm border border-grey mt-1">
+                        <div class="at-property-img lazyloaded" data-expand="-1"><img alt="costing sheet" data-sizes="auto" class="w-100 lazyautosizes ls-is-cached lazyloaded ls-inview" sizes="304px" src='{% static '' %}assets/img/costing.jpg'>
+                            <div class="at-property-overlayer"></div> <span class="btn btn-default at-property-btn">Enquire Now</span> </div>
+                        <div class="at-property-dis effetGradient">Complete Costing Details</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="section shadow-sm lazyload" id="sitefloorplan" data-script="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js " data-link="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+        <span class="section-link"></span>
+        <h2 class="head text-capitalize">Site &amp; Floor Plan of Rustomjee Ocean Vista</h2> <span class="d-block section-heading-sub text-capitalize">Master Plan</span>
+        <div class="masterplan-box">
+            <a href="#" class="text-decoration-none enqModal" data-form="lg" data-title="Send me plan details" data-btn="Send Now" data-enquiry="Get Master Plan" data-redirect="enquiry" data-toggle="modal" data-target="#enqModal">
+                <div class="at-property-item mt-1">
+                    <div class="at-property-img master-plan text-center">
+                        <img alt="Master Plan" data-sizes="auto" class="lazyload shadow-sm border border-grey" src="{% static '' %}assets/img/floorplan/masterplans.webp" />
+                        <div class="at-property-overlayer"></div>
+                        <span class="at-property-btn">View Master Plan </span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <span class="d-block section-heading-sub text-capitalize">Floor Plan</span>
+        <button class="btn btn-sm btn-info effetGradient effectScale enqModal" data-form="lg" data-title="Send me costing details" data-btn="Send Now" data-enquiry="Price Breakup" data-redirect="floorplan" data-toggle="modal" data-target="#enqModal">On Request</button>
+        <div class="row row-cols-1 row-cols-md-3">
+
+        </div>
+    </section>
+    <section class="section shadow-sm lazyload" id="amenities">
+        <span class="section-link"></span>
+        <div class="row">
+            <div class="col-md-8">
+                <h2 class="head text-capitalize">Amenities of Rustomjee Ocean Vista</h2>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-info micro-form-btn enqModal effetMoveGradient effectScale float-lg-right mx-sm-auto  d-none d-lg-block" data-form="lg" data-title="Download Amenities" data-btn="Send Now" data-enquiry="Download Amenities" data-redirect="floorplan"
+                    data-toggle="modal" data-target="#enqModal">Download Amenities</button>
+            </div>
+        </div>
+        <div id="ami-3" class="ami-3 owl-carousel owl-theme">
+            <div class="item-wrp">
+                <div class="ami_sec"><img alt="Alfresco Lounge" data-src="{% static '' %}assets/img/amenities/alfrescolounge.webp" loading="lazy" class="lazyload" fetchpriority="low" />
+                    <p>Alfresco Lounge</p>
+                </div>
+                <div class="ami_sec"><img alt="Banquet Hall" data-src="{% static '' %}assets/img/amenities/banquethall.webp" loading="lazy" class="lazyload" fetchpriority="low" />
+                    <p>Banquet Hall</p>
+                </div>
+            </div>
+            <div class="item-wrp">
+                <div class="ami_sec"><img alt="Gym" data-src="{% static '' %}assets/img/amenities/gymnasium.webp" loading="lazy" class="lazyload" fetchpriority="low" />
+                    <p>Gym</p>
+                </div>
+                <div class="ami_sec"><img alt="Jogging Track" data-src="{% static '' %}assets/img/amenities/joggingtrack.webp" loading="lazy" class="lazyload" fetchpriority="low" />
+                    <p>Jogging Track</p>
+                </div>
+            </div>
+            <div class="item-wrp">
+                <div class="ami_sec"><img alt="Kids’ Play Area" data-src="{% static '' %}assets/img/amenities/kidsplayarea.webp" loading="lazy" class="lazyload" fetchpriority="low" />
+                    <p>Kids’ Play Area</p>
+                </div>
+                <div class="ami_sec"><img alt="Landscaped Garden" data-src="{% static '' %}assets/img/amenities/landscapedgarden.webp" loading="lazy" class="lazyload" fetchpriority="low" />
+                    <p>Landscaped Garden</p>
+                </div>
+            </div>
+            <div class="item-wrp">
+                <div class="ami_sec"><img alt="Multipurpose Lawn" data-src="{% static '' %}assets/img/amenities/multipurposelawn.webp" loading="lazy" class="lazyload" fetchpriority="low" />
+                    <p>Multipurpose Lawn</p>
+                </div>
+                <div class="ami_sec"><img alt="Rooftop Deck" data-src="{% static '' %}assets/img/amenities/rooftopdeck.webp" loading="lazy" class="lazyload" fetchpriority="low" />
+                    <p>Rooftop Deck</p>
+                </div>
+            </div>
+            <div class="item-wrp">
+                <div class="ami_sec"><img alt="Swimming Pool" data-src="{% static '' %}assets/img/amenities/swimmingpool.webp" loading="lazy" class="lazyload" fetchpriority="low" />
+                    <p>Swimming Pool</p>
+                </div>
+                <div class="ami_sec"><img alt="Yoga Zone" data-src="{% static '' %}assets/img/amenities/yogazone.webp" loading="lazy" class="lazyload" fetchpriority="low" />
+                    <p>Yoga Zone</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-12">
+            <p></p>
+            <button class="btn btn-info micro-form-btn enqModal effetMoveGradient effectScale float-lg-right mx-sm-auto d-lg-none" data-form="lg" data-title="Download Amenities" data-btn="Send Now" data-enquiry="Download Amenities" data-redirect="floorplan" data-toggle="modal"
+                data-target="#enqModal">Download Amenities</button></div>
+    </section>
+    <section class="section shadow-sm lazyload" id="gallery">
+        <span class="section-link"></span>
+        <div class="row">
+            <div class="col-md-8">
+                <h2 class="head text-capitalize">Gallery of Rustomjee Ocean Vista</h2>
+            </div>
+            <div class="col-md-4"><button class="btn btn-info micro-form-btn enqModal effetMoveGradient effectScale float-lg-right mx-sm-auto  d-none d-lg-block" data-form="lg" data-title="Download Gallery" data-btn="Send Now" data-enquiry="Download Gallery" data-redirect="floorplan"
+                    data-toggle="modal" data-target="#enqModal">Download Gallery</button></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-2"><a data-fancybox="gallery-0" href="{% static '' %}assets/img/gallery/1.webp" aria-label="Gallery Image1"> <img alt="Swimming Pool" data-src="{% static '' %}assets/img/gallery/1.webp" class="lazyload gallery-thumb" /> </a></div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-2"><a data-fancybox="gallery-0" href="{% static '' %}assets/img/gallery/2.webp" aria-label="Gallery Image2"> <img alt="Parking" data-src="{% static '' %}assets/img/gallery/2.webp" class="lazyload gallery-thumb" /> </a></div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-2"><a data-fancybox="gallery-0" href="{% static '' %}assets/img/gallery/3.webp" aria-label="Gallery Image3"> <img alt="Bedroom" data-src="{% static '' %}assets/img/gallery/3.webp" class="lazyload gallery-thumb" /> </a></div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-2"><a data-fancybox="gallery-0" href="{% static '' %}assets/img/gallery/4.webp" aria-label="Gallery Image4"> <img alt="Living Room" data-src="{% static '' %}assets/img/gallery/4.webp" class="lazyload gallery-thumb" /> </a></div>
+        </div>
+        <div class="col-12">
+            <p></p>
+            <button class="btn btn-info micro-form-btn enqModal effetMoveGradient effectScale float-lg-right mx-sm-auto d-lg-none" data-form="lg" data-title="Download Gallery" data-btn="Send Now" data-enquiry="Download Gallery" data-redirect="floorplan" data-toggle="modal"
+                data-target="#enqModal">Download Gallery</button>
+        </div>
+    </section>
+    <style>
+        iframe {
+            width: 100%;
+            height: 38vh;
+            border: 2px solid #d7d7d7;
+        }
+
+        @media only screen and (max-width: 1024px) {
+            iframe {
+                width: 100%;
+                height: 32vh;
+                border: 2px solid #d7d7d7;
+            }
+        }
+
+        @media only screen and (max-width: 992px) {
+            iframe {
+                width: 100%;
+                height: 18vh;
+                border: 2px solid #d7d7d7;
+            }
+        }
+
+        @media only screen and (max-width: 800px) {
+            iframe {
+                width: 100%;
+                height: 26vh;
+                border: 2px solid #d7d7d7;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            iframe {
+                width: 100%;
+                height: 20vh;
+                border: 2px solid #d7d7d7;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            iframe {
+                width: 100%;
+                height: 50vh;
+                border: 2px solid #d7d7d7;
+            }
+        }
+    </style>
+    <section id="address_section" class="section shadow-sm"> </section>
+    <section class="section shadow-sm lazyloaded" id="sitevisit">
+        <span class="section-link"></span>
+        <span class="head text-capitalize">Virtual Tour Request</span>
+        <a href="#" class="enqModal" data-form="lg" data-title="Virtual Site Visit" data-btn="Start Tour" data-enquiry="Virtual Site Visit
+" data-redirect="virtualtour" data-toggle="modal" data-target="#enqModal">
+            <div class="at-property-item my-2 pt-md-0">
+                <div class="at-property-img vsv-img lazyloaded" data-expand="-1">
+                    <div class="d-block">
+                        <img alt="Rustomjee Ocean Vista" class="img-responsive" src="{% static '' %}assets/img/virtual_banner.webp" width="100%" fetchpriority="low" />
+                    </div>
+                    <div class="vsv-text-bk">
+                        <div class="vsv-text-bg">
+                            <div class="vsv-icon lazyloaded"></div>
+                            <span class="text-uppercase h1 font-weight-bold mb-0 d-none d-lg-block">Virtual Site Visit</span>
+                            <span class="text-capitalize text-center d-none d-lg-block"> Rustomjee Ocean Vista </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="text-center d-block d-lg-none content-clr">Virtual Site visit</span>
+        </a>
+    </section>
+    <section class="section shadow-sm lazyload" id="developer">
+        <div class="d-block pt-2 pb-1 text-center"><img alt="Rustomjee Ocean Vista Logo" src="{% static '' %}assets/img/logo.svg" loading="lazy" style="max-width: 100%; height: 65px; display: inline-block;" /></div>
+        <div class="row">
+            <div class="col-md-8">
+                <span class="d-block section-heading-sub text-capitalize">About Rustomjee Group</span>
+            </div>
+            <div class="col-md-4">
+                <div class="float-md-right d-none d-lg-block">
+                    <button class="btn btn-info micro-form-btn enqModal effetMoveGradient effectScale drift-open-chat-desktop" data-form="lg">
+Chat with us
+</button>
+                </div>
+            </div>
+        </div>
+
+        <p> Established in 1996, Rustomjee Group is one of the leading real estate developers in India. The firm specialises in building properties that are luxurious, innovative in design, & use sustainable technologies. It has built fine residential
+            townships, sleek commercial spaces, top healthcare institutions, & reputed schools in the country.</p>
+        <span class="d-block section-heading-sub1 text-capitalize">RERA Information</span>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="rera-box">
+                    <div class="rera-img">
+                        <img src="{% static '' %}assets/img/qrcode/qrcode_oceanvista.webp" loading="lazy" style="max-width: 100%; height: 100px; display: inline-block;" alt="P51800076673" />
+                    </div>
+                    <div class="rera-details">
+                        <p>Rustomjee Ocean Vista MahaRERA - <b>P51800076673</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="pro-rera text-center-mob">According to the RERA Act 2016 of the Government of India, all projects of the Rustomjee Group including the Rustomjee Ocean Vista, are listed on the Maharashtra Government's RERA website under registered projects.</span>
+        <p></p>
+        
+    <div class="float-lg-right mx-sm-auto d-lg-none">
+        <button class="btn btn-info micro-form-btn enqModal effetMoveGradient effectScale drift-open-chat-mobile" data-form="lg">
+
+    Chat with us.
+    </button>
+            </div>
+        </section>
+        <section style="text-align:justify;background:#f7f7f7 !important;" class="section shadow-sm lazyload" id="developer">
+            <small>
+    <style>
+.newlist { list-style: none; line-height: 25px; padding-left: 22px; text-align: left; }
+.newlist li:before { content: '✓'; font-weight: 800;  margin-right: 10px;  font-size: 13px;  margin-left: -22px; }
+	</style>
+	<ul class="newlist">
+        <li>Project Registered under Government of India RERA Act 2016</li>
+        <li>Government RERA Authorised Advertiser’s: Home Bazaar Services Pvt Ltd, Registration No A52000000045, CIN U45400MH2013PTC242930.</li>
+        <li>MAHA RERA Project Registration No.: P51800076673</li>
+        <li><b>Site Address:</b> Rustomjee Ocean Vista: JP Rd, Aram Nagar, Versova, Andheri West, Mumbai, Maharashtra 400047.</li>
+        <li><b>Contact Us:</b> Corporate Office: Rustomjee Group: Keystone Realtors Limited. 702 Natraj, M.V. Road Junction, Western Express Highway, Andheri(E) Mumbai - 400069, Maharashtra, India.</li>
+         
+	</ul>
+<b>Disclaimer:</b>
+We are an authorised marketing partner for this project. Provided content is given by respective owners and this website and content is for information purpose only and it does not constitute any offer to avail for any services. Prices mentioned are subject to change without prior notice and properties mentioned are subject to availability. You can expect a call, SMS or emails on details registered with us.<hr>
+<p style="text-align:center;">Copyright &copy; 2025 | <a aria-label="About Terms & Conditions" href="terms-conditions.php">Terms & Conditions</a> | <a aria-label="About Privacy Policy" href="privacy-policy.php">Privacy Policy</a> | <a aria-label="About Cookies Policy" href="cookies-policy.php">Cookies Policy</a> </p>
+</small>
+        </section>
+    </main>
+
+
+{% endblock body %}
