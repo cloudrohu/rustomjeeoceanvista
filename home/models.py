@@ -117,9 +117,7 @@ class Gallery(models.Model):
         
     class Meta:
         verbose_name_plural='8. Gallery'
-
-
-        
+     
 
 class ContactMessage(models.Model):
     STATUS = (
@@ -143,7 +141,6 @@ class ContactMessage(models.Model):
     
     class Meta:
         verbose_name_plural='1. Responce'
-
 
 class ContactForm(ModelForm):
     class Meta:
