@@ -52,3 +52,12 @@ class GalleryAdmin(admin.ModelAdmin):
 admin.site.register(Gallery, GalleryAdmin)
 
 
+
+class ContactMessageAdmin(admin.ModelAdmin):
+    list_display = ['name','subject', 'update_at','status','note','message','email','ip',]
+    list_editable = ['status','note']
+    readonly_fields =('name','subject','email','message','ip')
+    list_filter = ['status']
+
+
+admin.site.register(ContactMessage,ContactMessageAdmin)

@@ -1,4 +1,10 @@
+from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
+
+# Create your models here.
+from django.forms import ModelForm, TextInput, Textarea
+from django.http import request
+from django.utils.safestring import mark_safe
 
 # Create your models here.
 class Setting(models.Model):
@@ -19,7 +25,7 @@ class Setting(models.Model):
         return self.title    
         
     class Meta:
-        verbose_name_plural='1. Header'
+        verbose_name_plural='9. Header'
 
 class Web_Slider(models.Model):
     web_image = models.ImageField(upload_to='sliderimage/')
@@ -114,6 +120,41 @@ class Gallery(models.Model):
 
 
         
+
+class ContactMessage(models.Model):
+    STATUS = (
+        ('New', 'New'),
+        ('Read', 'Read'),
+        ('Closed', 'Closed'),
+        ('follow up', 'follow up'),
+    )
+    name= models.CharField(blank=False,max_length=20)
+    email= models.EmailField(blank=False,max_length=50)
+    subject= models.CharField(blank=False,max_length=50)
+    message= models.TextField(blank=False,max_length=255)
+    status=models.CharField(max_length=10,choices=STATUS,default='New')
+    ip = models.CharField(blank=True, max_length=20)
+    note = models.CharField(blank=True, max_length=100)
+    create_at=models.DateTimeField(auto_now_add=True)
+    update_at=models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+    
+    class Meta:
+        verbose_name_plural='1. Responce'
+
+
+class ContactForm(ModelForm):
+    class Meta:
+        model = ContactMessage
+        fields = ['name', 'email', 'subject','message']
+        widgets = {
+            'name'   : TextInput (attrs={'class': 'input','placeholder':'Name & Surname',} ),
+            'subject' : TextInput(attrs={'class': 'input','placeholder':'Subject'}),
+            'email'   : TextInput(attrs={'class': 'input','placeholder':'Email Address'}),
+            'message' : Textarea(attrs={'class': 'input','placeholder':'Your Message','rows':'5'}),
+        }
 
 
 
