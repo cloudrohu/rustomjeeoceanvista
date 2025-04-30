@@ -127,6 +127,7 @@ class ContactMessage(models.Model):
         ('follow up', 'follow up'),
     )
     name= models.CharField(blank=False,max_length=20)
+    mobile= models.CharField(blank=False,max_length=20)
     email= models.EmailField(blank=False,max_length=50)
     subject= models.CharField(blank=False,max_length=50)
     message= models.TextField(blank=False,max_length=255)
