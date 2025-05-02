@@ -187,5 +187,28 @@ class Welcometo(models.Model):
         return self.title    
         
     class Meta:
-        verbose_name_plural='5. Welcome To'
+        verbose_name_plural='11. Welcome To'
 
+
+class Location(models.Model):
+    title = models.CharField(max_length=150)    
+    
+    def __str__(self):
+        return self.title    
+        
+    class Meta:
+        verbose_name_plural='12. Location'
+
+
+
+class Maharera(models.Model):
+    qr_image = models.ImageField(upload_to='overviewimage/')
+    title = models.CharField(max_length=150)
+    maharera_no= models.CharField(blank=True,max_length=50)
+    details= models.CharField(blank=True,max_length=500)
+    
+    def __str__(self):
+        return self.title    
+        
+    class Meta:
+        verbose_name_plural='13. Maharera'

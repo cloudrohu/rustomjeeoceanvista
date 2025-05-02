@@ -73,3 +73,13 @@ admin.site.register(Bookingopen, BookingopenAdmin)
 class WelcometoAdmin(admin.ModelAdmin):
     list_display = ['id','title','details', 'readmore',]
 admin.site.register(Welcometo, WelcometoAdmin)
+
+# Register your models here. 8
+class LocationAdmin(admin.ModelAdmin):
+    list_display = ['id','title',]
+admin.site.register(Location, LocationAdmin)
+
+
+class MahareraAdmin(admin.ModelAdmin):
+    list_display = ['id','title','maharera_no','details']
+admin.site.register(Maharera, MahareraAdmin)

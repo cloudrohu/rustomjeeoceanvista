@@ -19,7 +19,7 @@ from home.models import *
 
 def index(request):
     header = Setting.objects.all().order_by('-id')[0:1]  
-    slider = Web_Slider.objects.all().order_by('-id')[0:1]  
+    slider = Web_Slider.objects.all().order_by('-id')[0:6]  
     overview = Overview.objects.all().order_by('-id')[0:1]  
     about_us = About_Us.objects.all().order_by('-id')[0:1]  
     unique_Selling_Proposition = Unique_Selling_Proposition.objects.all() 
