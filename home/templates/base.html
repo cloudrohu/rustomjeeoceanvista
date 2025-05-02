@@ -18,7 +18,7 @@
             j.src =
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
             f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-K48BTJFL');
+        })(window, document, 'script', 'dataLayer', 'GTM-K48BTJF');
     </script>
     <!-- End Google Tag Manager -->
 
@@ -26,7 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <link rel="icon" type="image/x-icon" href="favicon.webp" />
-    <title>Rustomjee Ocean Vista Luxurious 4 BHK Flats Versova, Mumbai</title>
+    <title>{{rs.title}}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="preload" href="{% static '' %}assets/img/mob1.webp" as="image">
     <link rel="stylesheet" href="{% static '' %}assets/css/purestyle.css" />
@@ -36,13 +36,13 @@
     <link rel="dns-prefetch" href="//googletagmanager.com" crossorigin />
     <link rel="dns-prefetch" href="//www.googleadservices.com" crossorigin />
     <link rel="dns-prefetch" href="//googleads.g.doubleclick.net" crossorigin />
-    <meta name="description" content="Rustomjee Ocean Vista in Versova, Mumbai - Residential Project by Rustomjee Group Offering 4 BHK Flats. Check Property Price, Floor Plans & Amenities" />
-    <meta name="keywords" content="" />
+    <meta name="description" content="{{rs.description}}" />
+    <meta name="keywords" content="{{rs.keywords}}" />
     <link rel="canonical" href="https://www.rustomjeesoceanvista.com/" />
     <meta property="og:title" content="Rustomjee Ocean Vista Luxurious 4 BHK Flats Versova, Mumbai" />
     <meta property="og:type" content="https://www.rustomjeesoceanvista.com/" />
     <meta property="og:url" content="https://www.rustomjeesoceanvista.com/" />
-    <meta property="og:image" content="{% static '' %}assets/img/deskanner_1.webp" />
+    <meta property="og:image" content="{% static '' %}assets/img/deskanner_11.webp" />
     <meta property="og:description" content="Rustomjee Ocean Vista in Versova, Mumbai - Residential Project by Rustomjee Group Offering 4 BHK Flats. Check Property Price, Floor Plans & Amenities" />
     <meta property="twitter:title" content="Rustomjee Ocean Vista Luxurious 4 BHK Flats Versova, Mumbai" />
     <meta property="twitter:description" content="Rustomjee Ocean Vista in Versova, Mumbai - Residential Project by Rustomjee Group Offering 4 BHK Flats. Check Property Price, Floor Plans & Amenities" />
@@ -228,7 +228,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <header class="micro-nav fixed-top pload">
         <nav class="navbar navbar-expand-lg navbar-light bg-white micro-navbar">
-            <a class="navbar-brand" href="/"><img alt="Rustomjee Ocean Vista Logo" src="{% static '' %}assets/img/logo.svg" class="logo" /></a>
+            <a class="navbar-brand" href="/"><img alt="Rustomjee Ocean Vista Logo" src="{{rs.logo.url}}" class="logo" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav nav-fill">
@@ -624,7 +624,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </ul>
                         </div>
                         <div class="flex-fill align-self-center">
-                            <span class="popup-logo"><img alt="Rustomjee Ocean Vista Logo" src="{% static '' %}assets/img/logo.svg" class="logo"></span>
+                            <span class="popup-logo"><img alt="Rustomjee Ocean Vista Logo" src="{{rs.logo.url}}" class="logo"></span>
                             <span class="modal-title-secondary"> Register here and Avail the <span class="text-danger">Best Offers!!</span></span>
                             <form action="https://microsite.fanmrealty.com/live/lead-callback.php" method="post" class="form-side" id="pardotForm" class="pardotForm">
                                 <input type="text" id="fname" placeholder="Name" name="fname" class="form-control rounded-0 micro-form-field" required>

@@ -6,7 +6,9 @@ from django.forms import ModelForm, TextInput, Textarea
 from django.http import request
 from django.utils.safestring import mark_safe
 
+
 # Create your models here.
+
 class Setting(models.Model):
     title = models.CharField(max_length=150,)
     keywords = models.CharField(max_length=255,)
@@ -155,4 +157,35 @@ class ContactForm(ModelForm):
         }
 
 
+
+class Bookingopen(models.Model):
+    project_name = models.CharField(max_length=150,)
+    at = models.CharField(max_length=255,)
+    by = models.CharField(max_length=255,)
+    landp_arcel = models.CharField(max_length=255,)
+    possession = models.CharField(max_length=255,)
+    spot_booking_offers = models.CharField(max_length=255,)
+    early_buy_discounts = models.CharField(max_length=255,)
+    flexipay_for_first = models.CharField(max_length=255,)
+    luxurious = models.CharField(max_length=255,)
+    priceing = models.CharField(max_length=255,)
+    
+    
+    def __str__(self):
+        return self.project_name    
+        
+    class Meta:
+        verbose_name_plural='10. project_name'
+
+
+class Welcometo(models.Model):
+    title = models.CharField(max_length=150)
+    details= models.TextField(blank=False,max_length=5500)
+    readmore= models.TextField(blank=False,max_length=5500)
+    
+    def __str__(self):
+        return self.title    
+        
+    class Meta:
+        verbose_name_plural='5. Welcome To'
 

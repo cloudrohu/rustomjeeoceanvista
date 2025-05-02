@@ -61,3 +61,15 @@ class ContactMessageAdmin(admin.ModelAdmin):
 
 
 admin.site.register(ContactMessage,ContactMessageAdmin)
+
+
+# Register your models here. 8
+class BookingopenAdmin(admin.ModelAdmin):
+    list_display = ['id','project_name','at', 'by', 'landp_arcel','possession','spot_booking_offers','early_buy_discounts','flexipay_for_first','luxurious','priceing']
+admin.site.register(Bookingopen, BookingopenAdmin)
+
+
+# Register your models here. 8
+class WelcometoAdmin(admin.ModelAdmin):
+    list_display = ['id','title','details', 'readmore',]
+admin.site.register(Welcometo, WelcometoAdmin)

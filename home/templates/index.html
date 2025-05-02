@@ -95,19 +95,24 @@
                             <th scope="col"></th>
                         </tr>
                     </thead>
+                    {% for rs in configuration %}
                     <tbody>
                         <tr>
-                            <td class="border border-left-0 border-top-0 border-bottom-0 price-type">4 BHK</td>
+                            <td class="border border-left-0 border-top-0 border-bottom-0 price-type">{{rs.typology}}</td>
                             <td class="border border-left-0 border-top-0 border-bottom-0 price-carpet">
-                                2394-2521 Sq.ft.
+                                {{rs.rera_carpet_area}}
                                 <small class="d-inline-block d-md-none">(Carpet Area)</small></td>
-                            <td class="price-amt"><i class="mi mi-rs-light"></i> 22 Cr Onwards
+                            <td class="price-amt"><i class="mi mi-rs-light"></i> {{rs.price}}
                             </td>
                             <td>
                                 <button class="btn btn-sm btn-info effetGradient effectScale enqModal" data-form="lg" data-title="Send me costing details" data-btn="Send Now" data-enquiry="Price Breakup" data-redirect="floorplan" data-toggle="modal" data-target="#enqModal">Price Breakup</button>
                             </td>
+                            
                         </tr>
+                    
                     </tbody>
+                    {% endfor %}
+                    
                 </table>
             </div>
             <div class="col-md-4">
@@ -292,7 +297,7 @@
         </a>
     </section>
     <section class="section shadow-sm lazyload" id="developer">
-        <div class="d-block pt-2 pb-1 text-center"><img alt="Rustomjee Ocean Vista Logo" src="{% static '' %}assets/img/logo.svg" loading="lazy" style="max-width: 100%; height: 65px; display: inline-block;" /></div>
+        <div class="d-block pt-2 pb-1 text-center"><img alt="Rustomjee Ocean Vista Logo" src="{{rs.logo.url}}" loading="lazy" style="max-width: 100%; height: 65px; display: inline-block;" /></div>
         <div class="row">
             <div class="col-md-8">
                 <span class="d-block section-heading-sub text-capitalize">About Rustomjee Group</span>
