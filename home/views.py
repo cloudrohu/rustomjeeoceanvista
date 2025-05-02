@@ -22,6 +22,10 @@ def index(request):
     slider = Web_Slider.objects.all().order_by('-id')[0:6]  
     overview = Overview.objects.all().order_by('-id')[0:1]  
     about_us = About_Us.objects.all().order_by('-id')[0:1]  
+    welcome = Welcometo.objects.all().order_by('-id')[0:1]  
+    location = Location.objects.all().order_by('-id')[0:1]  
+    bookingopen = Bookingopen.objects.all().order_by('-id')[0:1]  
+    maharera = Maharera.objects.all().order_by('-id')[0:1]  
     unique_Selling_Proposition = Unique_Selling_Proposition.objects.all() 
     configuration = Configuration.objects.all()
     amenities = Amenities.objects.all()
@@ -33,6 +37,10 @@ def index(request):
     gallery = Gallery.objects.all().order_by('-id')[0:4] 
 
     context={
+        'location':location,
+        'maharera':maharera,
+        'bookingopen':bookingopen,
+        'welcome':welcome,
         'header':header,
         'slider':slider,
         'overview':overview,

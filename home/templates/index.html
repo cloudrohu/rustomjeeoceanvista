@@ -26,61 +26,65 @@
             
         </div>
     </div>
+    {% for rs in bookingopen %}
+
     <div class="info-box overflow-hidden">
         <!--<span class="pro-status">Booking Open: Limited Time Only</span>-->
         <div class="wrapper offer-bg-animation">
             <span class="zoom-in-zoom-out padding10">Booking Open: Limited Time Only</span>
         </div>
         <h1 class="pro-title">
-            Rustomjee Ocean Vista
+            {{rs.title}}
 
         </h1>
         <div style="flex-wrap: wrap; display: inline-flex;padding-bottom: 10px;">
-            <span class="pro-add">At Versova</span>
-            <span class="pro-dev">by Rustomjee Group</span>
+            <span class="pro-add">At {{rs.at}}</span>
+            <span class="pro-dev">by {{rs.by}}</span>
         </div>
         <div class="card-d card-d-custom">
             <div>
                 <span class="heading2">Land Parcel </span>
-                <span class="heading1">0.5 Acre</span>
+                <span class="heading1">{{rs.landp_arcel}}</span>
             </div>
             <div>
                 <span class="heading2">Floors </span>
-                <span class="heading1">G + 24 Floors</span>
+                <span class="heading1">{{rs.floors}}</span>
             </div>
             <div>
                 <span class="heading2">Possession </span>
-                <span class="heading1">December 2027</span>
+                <span class="heading1">{{rs.possession}}</span>
             </div>
         </div>
         <span class="d-block mb-1 text-capitalize of-box offer-bg-animation">
           <span class="offer-text-outer"> <span class="offer-text"> 
-         Spot Booking Offers<br/> Early Buy Discounts <br/> Flexipay For First 100 Customers</span>
+         {{rs.spot_booking_offers}}<br/> {{rs.early_buy_discounts}} <br/> {{rs.flexipay_for_first}}</span>
         </span>
         </span>
         <span class="d-block" style="font-size: 14px; width: 100%; background: transparent; font-weight: bold; text-align: center; color: #fff;">
-    </span>
-        <span class="pro-tag-line"> Luxurious<b> 3/4/5 BHK </b>  Starts  at</span> <span class="pro-price">₹ 11Cr - 22Cr  <small style="font-size:16px;">  Onwards</small> </span>
+        
+        </span>
+        <span class="pro-tag-line"> Luxurious<b> {{rs.luxurious}} </b>  Starts  at</span> <span class="pro-price">₹ {{rs.priceing}}  <small style="font-size:16px;">  Onwards</small> </span>
         <button class="btn btn-info micro-form-btn enqModal effetMoveGradient effectScale" data-form="lg" data-title="Download Brochure" data-btn="Download Now" data-enquiry="Download Brochure Left Panel" data-redirect="enquiry" data-toggle="modal" data-target="#enqModal">
         Download Brochure
     </button>
     </div>
+    {% endfor %}
     <section class="section shadow-sm lazyload" id="overview">
-        <h2 class="d-block section-heading color-primary text-capitalize">Welcome to Rustomjee Ocean Vista</h2>
+        {% for rs in welcome %}
+    <h2 class="d-block section-heading color-primary text-capitalize">Welcome to {{rs.title}}</h2>
         <p>Rustomjee Ocean Vista is an upcoming sea touch residential community in Versova. It offers 3/4/5 BHK luxurious and spacious apartments and a provision of Jodi apartments. The Vastu-compliant residences are equipped with the finest design, contemporary
             features and branded fixtures. Moreover, this gated community presents a wide variety of modern amenities like a swimming pool, banquet hall, banquet hall, alfresco lounge, gymnasium, multipurpose lawn, jogging track, kids’ play area and
-            more.
-
-
-
+            more.   
         </p>
-        <p><span class="more-cont" style="display: none;"><span class="d-block">The neighbourhood has every facility such as schools, hospitals, shopping malls and commercial parks. Orchids The International School, Kokilaben Dhirubhai Ambani Hospital, St. Antony’s High School, Belle Vue Multispeciality Hospital, Pinnacle Business Park, Dmart and Infiniti Mall are nearby. The Versova metro station and Juhu Versova Link Road offer smooth connectivity to the central suburbs and South Mumbai. Both domestic and international airports are just a 30-minute drive away. Rustomjee Ocean Vista is an elite seaside community offering an affluent lifestyle in Versova.
-</span></span> <a href="#!" class="btn btn-link btn-sm more">Read more</a></p>
+        <p><span class="more-cont" style="display: none;"><span class="d-block">The neighbourhood has every facility such as schools, hospitals, shopping malls and commercial parks. Orchids The International School, Kokilaben Dhirubhai Ambani Hospital, St. Antony’s High School, Belle Vue Multispeciality Hospital, Pinnacle Business Park, Dmart and Infiniti Mall are nearby. The Versova metro station and Juhu Versova Link Road offer smooth connectivity to the central suburbs and South Mumbai. Both domestic and international airports are just a 30-minute drive away. Rustomjee Ocean Vista is an elite seaside community offering an affluent lifestyle in Versova.</span>
+        </span> <a href="#!" class="btn btn-link btn-sm more">Read more</a></p>
+        {% endfor %}
         <button class="btn btn-info micro-form-btn effetMoveGradient enqModal" data-form="md" data-title="Download Brochure" data-btn="Download Now" data-enquiry="Download Brochure Welcome Text" data-redirect="brochure" data-redirect-file="brochure.pdf" data-toggle="modal"
             data-target="#enqModal">
-<span class="d-inline-block fa fa-download mr-1 animated slideInDown infinite"></span> Download Brochure
-</button>
+        <span class="d-inline-block fa fa-download mr-1 animated slideInDown infinite"></span> Download Brochure
+        </button>
     </section>
+    
     <section class="section shadow-sm lazyload" id="pricing">
         <span class="section-link"></span>
         <span class="head text-capitalize">Price</span>

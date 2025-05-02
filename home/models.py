@@ -163,6 +163,7 @@ class Bookingopen(models.Model):
     at = models.CharField(max_length=255,)
     by = models.CharField(max_length=255,)
     landp_arcel = models.CharField(max_length=255,)
+    floors = models.CharField(max_length=255,)
     possession = models.CharField(max_length=255,)
     spot_booking_offers = models.CharField(max_length=255,)
     early_buy_discounts = models.CharField(max_length=255,)
@@ -175,7 +176,7 @@ class Bookingopen(models.Model):
         return self.project_name    
         
     class Meta:
-        verbose_name_plural='10. project_name'
+        verbose_name_plural='10. Booking Open'
 
 
 class Welcometo(models.Model):
@@ -198,8 +199,6 @@ class Location(models.Model):
         
     class Meta:
         verbose_name_plural='12. Location'
-
-
 
 class Maharera(models.Model):
     qr_image = models.ImageField(upload_to='overviewimage/')
