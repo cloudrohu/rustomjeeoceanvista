@@ -48,7 +48,7 @@ admin.site.register(Amenities, AmenitiesAdmin)
 
 # Register your models here. 8
 class GalleryAdmin(admin.ModelAdmin):
-    list_display = ['id','web_image','mobile_image', 'section', 'title']
+    list_display = ['id','web_image','title']
 admin.site.register(Gallery, GalleryAdmin)
 
 

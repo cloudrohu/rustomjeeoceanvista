@@ -72,11 +72,9 @@
     <section class="section shadow-sm lazyload" id="overview">
         {% for rs in welcome %}
     <h2 class="d-block section-heading color-primary text-capitalize">Welcome to {{rs.title}}</h2>
-        <p>Rustomjee Ocean Vista is an upcoming sea touch residential community in Versova. It offers 3/4/5 BHK luxurious and spacious apartments and a provision of Jodi apartments. The Vastu-compliant residences are equipped with the finest design, contemporary
-            features and branded fixtures. Moreover, this gated community presents a wide variety of modern amenities like a swimming pool, banquet hall, banquet hall, alfresco lounge, gymnasium, multipurpose lawn, jogging track, kids’ play area and
-            more.   
+        <p>{{rs.details}}   
         </p>
-        <p><span class="more-cont" style="display: none;"><span class="d-block">The neighbourhood has every facility such as schools, hospitals, shopping malls and commercial parks. Orchids The International School, Kokilaben Dhirubhai Ambani Hospital, St. Antony’s High School, Belle Vue Multispeciality Hospital, Pinnacle Business Park, Dmart and Infiniti Mall are nearby. The Versova metro station and Juhu Versova Link Road offer smooth connectivity to the central suburbs and South Mumbai. Both domestic and international airports are just a 30-minute drive away. Rustomjee Ocean Vista is an elite seaside community offering an affluent lifestyle in Versova.</span>
+        <p><span class="more-cont" style="display: none;"><span class="d-block">{{rs.readmore}}</span>
         </span> <a href="#!" class="btn btn-link btn-sm more">Read more</a></p>
         {% endfor %}
         <button class="btn btn-info micro-form-btn effetMoveGradient enqModal" data-form="md" data-title="Download Brochure" data-btn="Download Now" data-enquiry="Download Brochure Welcome Text" data-redirect="brochure" data-redirect-file="brochure.pdf" data-toggle="modal"
@@ -154,7 +152,9 @@
         <span class="section-link"></span>
         <div class="row">
             <div class="col-md-8">
-                <h2 class="head text-capitalize">Amenities of Rustomjee Ocean Vista</h2>
+                {% for rs in welcome %}
+                <h2 class="head text-capitalize">Amenities of {{rs.title}}</h2>
+                {% endfor %}
             </div>
             <div class="col-md-4">
                 <button class="btn btn-info micro-form-btn enqModal effetMoveGradient effectScale float-lg-right mx-sm-auto  d-none d-lg-block" data-form="lg" data-title="Download Amenities" data-btn="Send Now" data-enquiry="Download Amenities" data-redirect="floorplan"
@@ -162,46 +162,16 @@
             </div>
         </div>
         <div id="ami-3" class="ami-3 owl-carousel owl-theme">
+            {% for rs in amenities %}
             <div class="item-wrp">
-                <div class="ami_sec"><img alt="Alfresco Lounge" data-src="{% static '' %}assets/img/amenities/alfrescolounge.webp" loading="lazy" class="lazyload" fetchpriority="low" />
-                    <p>Alfresco Lounge</p>
+                <div class="ami_sec"><img alt="Alfresco Lounge" data-src="{{rs.icone.url}}" style="height: 250px;" loading="lazy" class="lazyload" fetchpriority="low" />
+                    <p>{{rs.title}}</p>
                 </div>
-                <div class="ami_sec"><img alt="Banquet Hall" data-src="{% static '' %}assets/img/amenities/banquethall.webp" loading="lazy" class="lazyload" fetchpriority="low" />
-                    <p>Banquet Hall</p>
+                <div class="ami_sec"><img alt="Banquet Hall" data-src="{{rs.icone2.url}}" style="height: 250px;" loading="lazy" class="lazyload" fetchpriority="low" />
+                    <p>{{rs.title2}}</p>
                 </div>
             </div>
-            <div class="item-wrp">
-                <div class="ami_sec"><img alt="Gym" data-src="{% static '' %}assets/img/amenities/gymnasium.webp" loading="lazy" class="lazyload" fetchpriority="low" />
-                    <p>Gym</p>
-                </div>
-                <div class="ami_sec"><img alt="Jogging Track" data-src="{% static '' %}assets/img/amenities/joggingtrack.webp" loading="lazy" class="lazyload" fetchpriority="low" />
-                    <p>Jogging Track</p>
-                </div>
-            </div>
-            <div class="item-wrp">
-                <div class="ami_sec"><img alt="Kids’ Play Area" data-src="{% static '' %}assets/img/amenities/kidsplayarea.webp" loading="lazy" class="lazyload" fetchpriority="low" />
-                    <p>Kids’ Play Area</p>
-                </div>
-                <div class="ami_sec"><img alt="Landscaped Garden" data-src="{% static '' %}assets/img/amenities/landscapedgarden.webp" loading="lazy" class="lazyload" fetchpriority="low" />
-                    <p>Landscaped Garden</p>
-                </div>
-            </div>
-            <div class="item-wrp">
-                <div class="ami_sec"><img alt="Multipurpose Lawn" data-src="{% static '' %}assets/img/amenities/multipurposelawn.webp" loading="lazy" class="lazyload" fetchpriority="low" />
-                    <p>Multipurpose Lawn</p>
-                </div>
-                <div class="ami_sec"><img alt="Rooftop Deck" data-src="{% static '' %}assets/img/amenities/rooftopdeck.webp" loading="lazy" class="lazyload" fetchpriority="low" />
-                    <p>Rooftop Deck</p>
-                </div>
-            </div>
-            <div class="item-wrp">
-                <div class="ami_sec"><img alt="Swimming Pool" data-src="{% static '' %}assets/img/amenities/swimmingpool.webp" loading="lazy" class="lazyload" fetchpriority="low" />
-                    <p>Swimming Pool</p>
-                </div>
-                <div class="ami_sec"><img alt="Yoga Zone" data-src="{% static '' %}assets/img/amenities/yogazone.webp" loading="lazy" class="lazyload" fetchpriority="low" />
-                    <p>Yoga Zone</p>
-                </div>
-            </div>
+            {% endfor %}
 
         </div>
         <div class="col-12">
@@ -213,16 +183,18 @@
         <span class="section-link"></span>
         <div class="row">
             <div class="col-md-8">
-                <h2 class="head text-capitalize">Gallery of Rustomjee Ocean Vista</h2>
+                {% for rs in welcome %}
+                <h2 class="head text-capitalize">Gallery of  {{rs.title}}</h2>
+                {% endfor %}
             </div>
             <div class="col-md-4"><button class="btn btn-info micro-form-btn enqModal effetMoveGradient effectScale float-lg-right mx-sm-auto  d-none d-lg-block" data-form="lg" data-title="Download Gallery" data-btn="Send Now" data-enquiry="Download Gallery" data-redirect="floorplan"
                     data-toggle="modal" data-target="#enqModal">Download Gallery</button></div>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-2"><a data-fancybox="gallery-0" href="{% static '' %}assets/img/gallery/1.webp" aria-label="Gallery Image1"> <img alt="Swimming Pool" data-src="{% static '' %}assets/img/gallery/1.webp" class="lazyload gallery-thumb" /> </a></div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-2"><a data-fancybox="gallery-0" href="{% static '' %}assets/img/gallery/2.webp" aria-label="Gallery Image2"> <img alt="Parking" data-src="{% static '' %}assets/img/gallery/2.webp" class="lazyload gallery-thumb" /> </a></div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-2"><a data-fancybox="gallery-0" href="{% static '' %}assets/img/gallery/3.webp" aria-label="Gallery Image3"> <img alt="Bedroom" data-src="{% static '' %}assets/img/gallery/3.webp" class="lazyload gallery-thumb" /> </a></div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-2"><a data-fancybox="gallery-0" href="{% static '' %}assets/img/gallery/4.webp" aria-label="Gallery Image4"> <img alt="Living Room" data-src="{% static '' %}assets/img/gallery/4.webp" class="lazyload gallery-thumb" /> </a></div>
+            {% for rs in gallery %}
+            <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-2"><a data-fancybox="gallery-0" href="{{rs.web_image.url}}" aria-label="Gallery Image1"> <img alt="Swimming Pool" data-src="{{rs.web_image.url}}" class="lazyload gallery-thumb" /> </a></div>
+            {% endfor %}
+            
         </div>
         <div class="col-12">
             <p></p>
@@ -286,13 +258,17 @@
             <div class="at-property-item my-2 pt-md-0">
                 <div class="at-property-img vsv-img lazyloaded" data-expand="-1">
                     <div class="d-block">
-                        <img alt="Rustomjee Ocean Vista" class="img-responsive" src="{% static '' %}assets/img/virtual_banner.webp" width="100%" fetchpriority="low" />
+                        {% for rs in header %}
+                        <img alt="Rustomjee Ocean Vista" class="img-responsive" src="{{rs.virtual_site_visit.url}}" width="100%" fetchpriority="low" />
+                        {% endfor %}
                     </div>
                     <div class="vsv-text-bk">
                         <div class="vsv-text-bg">
                             <div class="vsv-icon lazyloaded"></div>
                             <span class="text-uppercase h1 font-weight-bold mb-0 d-none d-lg-block">Virtual Site Visit</span>
-                            <span class="text-capitalize text-center d-none d-lg-block"> Rustomjee Ocean Vista </span>
+                            {% for rs in welcome %}
+                            <span class="text-capitalize text-center d-none d-lg-block"> {{rs.title}} </span>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>

@@ -1006,7 +1006,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Start of Async Drift Code -->
     <script defer="defer">
         var executed = true;
-        var h1tag = "Rustomjee Ocean Vista";
+        {% for rs in welcome %}
+        var h1tag = "{{rs.title}}";
+        {% endfor %}
         window.onscroll = function() {
             if (executed) {
                 document.querySelector('#address_section').insertAdjacentHTML('afterbegin', `
@@ -1015,29 +1017,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="row mb-3"> 
                         <div class="col-md-7 col-sm-12 map-view"> 
                             <span class="d-block section-heading-sub text-capitalize">Map View</span> 
-                          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13978.548510682791!2d72.814077!3d19.129744!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b722078d7f85%3A0x2c88160c00e2a11e!2sSagar%20Tarang!5e1!3m2!1sen!2sin!4v1728117192958!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                         </div> 
-                        <div class="col-md-5 col-sm-12 lmap-div text-center location"> 
-                            <span class="d-block section-heading-sub text-capitalize text-center">Location Map</span> 
-                            <a href="#" class="text-decoration-none enqModal" aria-label="Download Location Map" data-form="lg" data-title="Download Location Map" data-btn="Download now" data-enquiry="View Location Map" data-toggle="modal" data-target="#enqModal"> 
-                                <div class="at-property-item mb-2"> 
-                                    <div class="at-property-img master-plan lazyloaded" data-expand="-1"> 
-                                        <img alt="location map" class="shadow-sm border border-grey lazyautosizes ls-is-cached lazyloaded ls-inview" src="{% static '' %}assets/img/locationmap.webp"> 
-                                        <div class="at-property-overlayer"></div> 
-                                        <span class="at-property-btn">Download Location Map</span> 
-                                    </div> 
-                                </div> 
-                            </a> 
+                            {% for rs in header %}
+                            {{rs.location |safe}}
+                            {% endfor %}
+                        
+                          <div class="col-md-5 col-sm-12 lmap-div text-center location"> 
+                            
                         </div> 
                     </div> 
                     <p></p> 
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3"> 
                         
-                        <div class="col my-2"><i  class="fa-solid fa-bars color-primary loc-icon"></i> Versova Metro Station - 5 Minutes</div> 
-                        <div class="col my-2"><i  class="fa-solid fa-bars color-primary loc-icon"></i> Juhu Versova Link Road - 5 Minutes</div> 
-                        <div class="col my-2"><i  class="fa-solid fa-bars color-primary loc-icon"></i> CSM International Airport - 30 Minutes</div> 
-                        <div class="col my-2"><i  class="fa-solid fa-bars color-primary loc-icon"></i> Western Express Highway - 25 Minutes</div> 
-                        <div class="col my-2"><i  class="fa-solid fa-bars loc-icon"></i> Andheri Railway Station - 20 Minutes</div> 
-                        <div class="col my-2"><i  class="fa-solid fa-bars color-primary loc-icon"></i> Infiniti Mall - 12 Minutes</div> 
+                        {% for rs in location %}                        
+                        <div class="col my-1"><i  class="fa-solid fa-bars color-primary loc-icon"></i> {{rs.title}}</div> 
+                        {% endfor %}
+                                                
                     </div> 
                 `);
                 executed = false;

@@ -23,17 +23,12 @@ def index(request):
     overview = Overview.objects.all().order_by('-id')[0:1]  
     about_us = About_Us.objects.all().order_by('-id')[0:1]  
     welcome = Welcometo.objects.all().order_by('-id')[0:1]  
-    location = Location.objects.all().order_by('-id')[0:1]  
+    location = Location.objects.all().order_by('-id')     
     bookingopen = Bookingopen.objects.all().order_by('-id')[0:1]  
     maharera = Maharera.objects.all().order_by('-id')[0:1]  
     unique_Selling_Proposition = Unique_Selling_Proposition.objects.all() 
     configuration = Configuration.objects.all()
     amenities = Amenities.objects.all()
-    views = Gallery.objects.filter(section = 'Views').order_by('-id')
-    amenitie = Gallery.objects.filter(section = 'Amenities').order_by('-id')
-    interiors = Gallery.objects.filter(section = 'Interiors').order_by('-id')
-    exterior = Gallery.objects.filter(section = 'Exterior').order_by('-id')
-    plans = Gallery.objects.filter(section = 'Plans').order_by('-id')
     gallery = Gallery.objects.all().order_by('-id')[0:4] 
 
     context={
@@ -48,11 +43,6 @@ def index(request):
         'unique_Selling_Proposition':unique_Selling_Proposition,
         'configuration':configuration,
         'amenities':amenities,
-        'views':views,
-        'amenitie':amenitie,
-        'interiors':interiors,
-        'exterior':exterior,
-        'plans':plans,
         'gallery':gallery,
     }
     return render(request,'index.html',context)

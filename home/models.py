@@ -17,6 +17,7 @@ class Setting(models.Model):
     logo = models.ImageField(upload_to='logo/',)
     logo_2 = models.ImageField(upload_to='logo/')
     icon = models.ImageField(upload_to='images/',)
+    virtual_site_visit = models.ImageField(upload_to='images/',)
     color = models.CharField(max_length=150)
     cuntact_no = models.CharField(max_length=150,)
     location = models.CharField(max_length=1150,)
@@ -99,19 +100,8 @@ class Amenities(models.Model):
     class Meta:
         verbose_name_plural='7. Amenities'
 
-class Gallery(models.Model):
-
-    SECTION = (
-        ('Views','Views'),
-        ('Amenities','Amenities'),       
-        ('Interiors','Interiors'),       
-        ('Exterior','Exterior'),       
-        ('Plans','Plans'),  
-    )
-
-    section = models.CharField(choices=SECTION,max_length=100)
+class Gallery(models.Model):   
     web_image = models.ImageField(upload_to='galleryimage/')
-    mobile_image = models.ImageField(upload_to='galleryimage/')
     title = models.CharField(max_length=150)
     
     def __str__(self):
