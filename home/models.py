@@ -201,3 +201,18 @@ class Maharera(models.Model):
         
     class Meta:
         verbose_name_plural='13. Maharera'
+
+
+class Reraaditional(models.Model):
+    project_registered = models.CharField(max_length=350)
+    Government_RERA_Authorised_Advertiser = models.CharField(max_length=500)
+    RERA_Project_Registration_No = models.CharField(max_length=500)
+    Site_Address = models.CharField(max_length=350)
+    Contact_Us = models.CharField(max_length=500)
+    Disclaimer = models.CharField(max_length=1500)
+    
+    def __str__(self):
+        return self.project_registered    
+        
+    class Meta:
+        verbose_name_plural='14. RERA Aditional;'

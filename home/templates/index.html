@@ -130,7 +130,9 @@
     </section>
     <section class="section shadow-sm lazyload" id="sitefloorplan" data-script="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js " data-link="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
         <span class="section-link"></span>
-        <h2 class="head text-capitalize">Site &amp; Floor Plan of Rustomjee Ocean Vista</h2> <span class="d-block section-heading-sub text-capitalize">Master Plan</span>
+        {% for rs in welcome %}
+        <h2 class="head text-capitalize">Site &amp; Floor Plan of {{rs.title}}</h2> <span class="d-block section-heading-sub text-capitalize">Master Plan</span>
+        {% endfor %}
         <div class="masterplan-box">
             <a href="#" class="text-decoration-none enqModal" data-form="lg" data-title="Send me plan details" data-btn="Send Now" data-enquiry="Get Master Plan" data-redirect="enquiry" data-toggle="modal" data-target="#enqModal">
                 <div class="at-property-item mt-1">
@@ -278,36 +280,41 @@
     </section>
     <section class="section shadow-sm lazyload" id="developer">
         <div class="d-block pt-2 pb-1 text-center"><img alt="Rustomjee Ocean Vista Logo" src="{{rs.logo.url}}" loading="lazy" style="max-width: 100%; height: 65px; display: inline-block;" /></div>
+        {% for rs in about_us %}
         <div class="row">
             <div class="col-md-8">
-                <span class="d-block section-heading-sub text-capitalize">About Rustomjee Group</span>
+                <span class="d-block section-heading-sub text-capitalize">About {{rs.title}}</span>
             </div>
             <div class="col-md-4">
                 <div class="float-md-right d-none d-lg-block">
                     <button class="btn btn-info micro-form-btn enqModal effetMoveGradient effectScale drift-open-chat-desktop" data-form="lg">
-Chat with us
-</button>
+                    Chat with us
+                    </button>
                 </div>
             </div>
         </div>
 
-        <p> Established in 1996, Rustomjee Group is one of the leading real estate developers in India. The firm specialises in building properties that are luxurious, innovative in design, & use sustainable technologies. It has built fine residential
-            townships, sleek commercial spaces, top healthcare institutions, & reputed schools in the country.</p>
+        <p>{{rs.details}}</p>
+            {% endfor %}
+
+
         <span class="d-block section-heading-sub1 text-capitalize">RERA Information</span>
         <div class="row">
+            {% for rs in maharera %}
             <div class="col-md-3">
                 <div class="rera-box">
                     <div class="rera-img">
-                        <img src="{% static '' %}assets/img/qrcode/qrcode_oceanvista.webp" loading="lazy" style="max-width: 100%; height: 100px; display: inline-block;" alt="P51800076673" />
+                        <img src="{{rs.qr_image.url}}" loading="lazy" style="max-width: 100%; height: 100px; display: inline-block;" alt="P51800076673" />
                     </div>
                     <div class="rera-details">
-                        <p>Rustomjee Ocean Vista MahaRERA - <b>P51800076673</b></p>
+                        <p>{{rs.title}} - <b>{{rs.maharera_no}}</b></p>
                     </div>
                 </div>
             </div>
         </div>
-        <span class="pro-rera text-center-mob">According to the RERA Act 2016 of the Government of India, all projects of the Rustomjee Group including the Rustomjee Ocean Vista, are listed on the Maharashtra Government's RERA website under registered projects.</span>
+        <span class="pro-rera text-center-mob">{{rs.details}}</span>
         <p></p>
+        {% endfor %}
         
     <div class="float-lg-right mx-sm-auto d-lg-none">
         <button class="btn btn-info micro-form-btn enqModal effetMoveGradient effectScale drift-open-chat-mobile" data-form="lg">
@@ -319,21 +326,24 @@ Chat with us
         <section style="text-align:justify;background:#f7f7f7 !important;" class="section shadow-sm lazyload" id="developer">
             <small>
     <style>
-.newlist { list-style: none; line-height: 25px; padding-left: 22px; text-align: left; }
-.newlist li:before { content: '✓'; font-weight: 800;  margin-right: 10px;  font-size: 13px;  margin-left: -22px; }
+    .newlist { list-style: none; line-height: 25px; padding-left: 22px; text-align: left; }
+    .newlist li:before { content: '✓'; font-weight: 800;  margin-right: 10px;  font-size: 13px;  margin-left: -22px; }
 	</style>
+    {% for rs in reraaditional %}
 	<ul class="newlist">
-        <li>Project Registered under Government of India RERA Act 2016</li>
-        <li>Government RERA Authorised Advertiser’s: Home Bazaar Services Pvt Ltd, Registration No A52000000045, CIN U45400MH2013PTC242930.</li>
-        <li>MAHA RERA Project Registration No.: P51800076673</li>
-        <li><b>Site Address:</b> Rustomjee Ocean Vista: JP Rd, Aram Nagar, Versova, Andheri West, Mumbai, Maharashtra 400047.</li>
-        <li><b>Contact Us:</b> Corporate Office: Rustomjee Group: Keystone Realtors Limited. 702 Natraj, M.V. Road Junction, Western Express Highway, Andheri(E) Mumbai - 400069, Maharashtra, India.</li>
+        <li>{{rs.project_registered}} </li>
+        <li>{{rs.Government_RERA_Authorised_Advertiser}}.</li>
+        <li>{{rs.RERA_Project_Registration_No}}</li>
+        <li><b>Site Address:</b> {{rs.Site_Address}}</li>
+        <li><b>Contact Us:</b>{{rs.Contact_Us}}</li>
          
 	</ul>
-<b>Disclaimer:</b>
-We are an authorised marketing partner for this project. Provided content is given by respective owners and this website and content is for information purpose only and it does not constitute any offer to avail for any services. Prices mentioned are subject to change without prior notice and properties mentioned are subject to availability. You can expect a call, SMS or emails on details registered with us.<hr>
-<p style="text-align:center;">Copyright &copy; 2025 | <a aria-label="About Terms & Conditions" href="terms-conditions.php">Terms & Conditions</a> | <a aria-label="About Privacy Policy" href="privacy-policy.php">Privacy Policy</a> | <a aria-label="About Cookies Policy" href="cookies-policy.php">Cookies Policy</a> </p>
-</small>
+    <b>Disclaimer:</b>
+    {{rs.Disclaimer}}
+    <hr>
+    {% endfor %}    
+    <p style="text-align:center;">Copyright &copy; 2025 | <a aria-label="About Terms & Conditions" href="terms-conditions.php">Terms & Conditions</a> | <a aria-label="About Privacy Policy" href="privacy-policy.php">Privacy Policy</a> | <a aria-label="About Cookies Policy" href="cookies-policy.php">Cookies Policy</a> </p>
+    </small>
         </section>
     </main>
     {% endfor %}

@@ -83,3 +83,8 @@ admin.site.register(Location, LocationAdmin)
 class MahareraAdmin(admin.ModelAdmin):
     list_display = ['id','title','maharera_no','details']
 admin.site.register(Maharera, MahareraAdmin)
+
+class ReraaditionalAdmin(admin.ModelAdmin):
+    list_display = ['id','project_registered','Government_RERA_Authorised_Advertiser','RERA_Project_Registration_No','Site_Address','Contact_Us','Disclaimer']
+admin.site.register(Reraaditional, ReraaditionalAdmin)
+
