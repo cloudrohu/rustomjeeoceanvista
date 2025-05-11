@@ -19,14 +19,21 @@
         <div class="carousel-inner">
             {% for rs in slider %}
             <div class="carousel-item lazyloaded">
-                <div class="desktopview"><img alt="Rustomjee Ocean Vista" width="1200" height="400" class="d-block micro-main-slider-img" src="{{rs.web_image.url}}" fetchpriority="high" /></div>
+                <div class="mobileview"><img alt="Rustomjee Ocean Vista" width="1200" height="400" class="d-block micro-main-slider-img" src="{{rs.web_image.url}}" fetchpriority="high" /></div>
             </div>
 
             {% endfor %}
             
         </div>
     </div>
-    {% for rs in bookingopen %}
+
+    
+
+
+
+
+
+      {% for rs in bookingopen %}
 
     <div class="info-box overflow-hidden">
         <!--<span class="pro-status">Booking Open: Limited Time Only</span>-->

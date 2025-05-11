@@ -156,67 +156,11 @@
             text-align: center !important;
         }
     </style>
+    
     <!-- Drift Start -->
     <!-- Drift Start -->
     <!-- Start of Async Drift Code -->
 
-    <script>
-        "use strict";
-        ! function() {
-            var t = window.driftt = window.drift = window.driftt || [];
-            if (!t.init) {
-                if (t.invoked) return void(window.console && console.error && console.error("Drift snippet included twice."));
-                t.invoked = !0, t.methods = ["identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on"],
-                    t.factory = function(e) {
-                        return function() {
-                            var n = Array.prototype.slice.call(arguments);
-                            return n.unshift(e), t.push(n), t;
-                        };
-                    }, t.methods.forEach(function(e) {
-                        t[e] = t.factory(e);
-                    }), t.load = function(t) {
-                        var e = 3e5,
-                            n = Math.ceil(new Date() / e) * e,
-                            o = document.createElement("script");
-                        o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
-                        var i = document.getElementsByTagName("script")[0];
-                        i.parentNode.insertBefore(o, i);
-                    };
-            }
-        }();
-        drift.SNIPPET_VERSION = '0.3.1';
-        window.drift_init_options = {
-            loadType: 'ON_INTERACTIVE'
-        };
-        drift.load('bk6awgu2hnb2');
-        // When drift loaded successfully trigger the drift window
-        drift.on('ready', function(api) {
-            var emaildrift = '';
-            drift.api.setUserAttributes({
-                "Customer Device": "Desktop",
-                "Drift GCLID": new URLSearchParams(window.location.search).get('gclid')
-            });
-            window.drift.on("emailCapture", function(e) {
-                emaildrift = e.data.email;
-                console.log("email id captured");
-            })
-            window.drift.on("phoneCapture", function(data) {
-                console.log("phone number captured");
-                //console.log("user clicked a button: " + JSON.stringify(data));
-                dataLayer.push({
-                    'event': 'hbpushleads',
-                    'email': emaildrift,
-                    'eventCategory': 'Drift Widget',
-                    'eventAction': 'phone number captured',
-                    'eventLabel': 'drift conversation id: '
-                });
-            });
-            drift.api.startInteraction({
-                interactionId: 385444
-            });
-        });
-    </script>
-    <!-- End of Async Drift Code -->
 </head>
 
 <body data-spy="scroll" data-target="#navbarNav">
@@ -1151,6 +1095,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         })
     </script>
     <script defer src="{% static '' %}assets/js/app1_min.js"></script>
+
+    
 </body>
 
 </html>
