@@ -4,6 +4,7 @@
 {% for rs in header %}
 <head>
     <!-- Google Tag Manager -->
+    {% for rs in header %}
     <script>
         (function(w, d, s, l, i) {
             w[l] = w[l] || [];
@@ -18,8 +19,9 @@
             j.src =
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
             f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-K48BTJF');
+        })(window, document, 'script', 'dataLayer', 'GTM-{{rs.googletagmanager}}');
     </script>
+    {% endfor %}
     <!-- End Google Tag Manager -->
 
     <meta charset="utf-8" />
@@ -165,8 +167,10 @@
 
 <body data-spy="scroll" data-target="#navbarNav">
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K48BTJFL"
+    {% for rs in header %}
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-{{rs.googletagmanager}}"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    {% endfor %}
     <!-- End Google Tag Manager (noscript) -->
 
 
@@ -851,9 +855,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                     <!--Privacy Policy LINK-->
                     <small class="modal-call-btn">
-    <!--CONTACT NO-->
-            <a href="tel:+91{{rs.cuntact_no}}" aria-label="Contact No."  class="modal-call-btn" style="display: inline-block;justify-content: center;width: fit-content;padding: 0.5rem 1rem; margin-bottom: 0.5rem; background-color: var(--colorPrimary);color: var(--colorBtn);text-decoration: none;border-radius: 4px;"><i class="mi mi-call"></i>+91{{rs.cuntact_no}}</a>
-    </small>
+                    <!--CONTACT NO-->
+                        <a href="tel:+91{{rs.cuntact_no}}" aria-label="Contact No."  class="modal-call-btn" style="display: inline-block;justify-content: center;width: fit-content;padding: 0.5rem 1rem; margin-bottom: 0.5rem; background-color: var(--colorPrimary);color: var(--colorBtn);text-decoration: none;border-radius: 4px;"><i class="mi mi-call"></i>+91{{rs.cuntact_no}}</a>
+                    </small>
                 </div>
             </div>
         </div>
