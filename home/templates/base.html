@@ -3,27 +3,7 @@
 {% load static %}
 {% for rs in header %}
 <head>
-    <!-- Google Tag Manager -->
-    {% for rs in header %}
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-{{rs.googletagmanager}}');
-    </script>
-    {% endfor %}
-    <!-- End Google Tag Manager -->
-
+    
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
@@ -40,10 +20,10 @@
     <link rel="dns-prefetch" href="//googleads.g.doubleclick.net" crossorigin />
     <meta name="description" content="{{rs.description}}" />
     <meta name="keywords" content="{{rs.keywords}}" />
-    <link rel="canonical" href="https://www.rustomjeesoceanvista.com/" />
+    <link rel="canonical" href="{{rs.website_link}}" />
     <meta property="og:title" content="Rustomjee Ocean Vista Luxurious 4 BHK Flats Versova, Mumbai" />
-    <meta property="og:type" content="https://www.rustomjeesoceanvista.com/" />
-    <meta property="og:url" content="https://www.rustomjeesoceanvista.com/" />
+    <meta property="og:type" content="{{rs.website_link}}" />
+    <meta property="og:url" content="{{rs.website_link}}" />
     <meta property="og:image" content="{% static '' %}assets/img/deskanner_11.webp" />
     <meta property="og:description" content="Rustomjee Ocean Vista in Versova, Mumbai - Residential Project by Rustomjee Group Offering 4 BHK Flats. Check Property Price, Floor Plans & Amenities" />
     <meta property="twitter:title" content="Rustomjee Ocean Vista Luxurious 4 BHK Flats Versova, Mumbai" />
@@ -159,20 +139,11 @@
         }
     </style>
     
-    <!-- Drift Start -->
-    <!-- Drift Start -->
-    <!-- Start of Async Drift Code -->
-
+<!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id={{rs.googletagmanager}}"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '{{rs.googletagmanager}}'); </script>
 </head>
 
 <body data-spy="scroll" data-target="#navbarNav">
-    <!-- Google Tag Manager (noscript) -->
-    {% for rs in header %}
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-{{rs.googletagmanager}}"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    {% endfor %}
-    <!-- End Google Tag Manager (noscript) -->
-
+   
 
     <header class="micro-nav fixed-top pload">
         <nav class="navbar navbar-expand-lg navbar-light bg-white micro-navbar">
@@ -541,7 +512,7 @@
             <input type="hidden" name=ip id="ip" value="122.161.176.16">
             <input type="hidden" name=mobile id="modal_dg_mobile2" class="mobileconcat">
             <input type="hidden" id="enquiredfor" name="enquiredfor" value="Pre Register here for Best Offers">
-            <input type="hidden" name="home_url" value="https://www.rustomjeesoceanvista.com/">
+            <input type="hidden" name="home_url" value="{{rs.website_link}}">
             <input type="hidden" name="gclid" id="gclid" value="Cj0KCQjws-S-BhD2ARIsALssG0aAgP6GUOsQKa6Z99Vz658cTC72E-U4gBslBnn8vsZdaFCVNsA88zQaAqzgEALw_wcB">
             <input type="hidden" name="utm_source" id="utm_source" value="google">
             <input type="hidden" name="utm_medium" id="utm_medium" value="cpc">
@@ -838,7 +809,7 @@
                                 <input type="hidden" name=ip id="ip" value="122.161.176.16">
                                 <input type="hidden" name=mobile id="modal_dg_mobile" class="mobileconcat">
                                 <input type="hidden" id="enquiredfor" name="enquiredfor" value="Get Instant Call Back Home Page Pop Up">
-                                <input type="hidden" name="home_url" value="https://www.rustomjeesoceanvista.com/">
+                                <input type="hidden" name="home_url" value="{{rs.website_link}}">
                                 <input type="hidden" name="gclid" id="gclid" value="Cj0KCQjws-S-BhD2ARIsALssG0aAgP6GUOsQKa6Z99Vz658cTC72E-U4gBslBnn8vsZdaFCVNsA88zQaAqzgEALw_wcB">
                                 <input type="hidden" name="utm_source" id="utm_source" value="google">
                                 <input type="hidden" name="utm_medium" id="utm_medium" value="cpc">

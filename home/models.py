@@ -11,6 +11,7 @@ from django.utils.safestring import mark_safe
 
 class Setting(models.Model):
     title = models.CharField(max_length=150,)
+    website_link = models.CharField(max_length=150,)
     keywords = models.CharField(max_length=255,)
     description = models.CharField(max_length=255,)
     configuration_bg = models.ImageField(upload_to='logo/')
