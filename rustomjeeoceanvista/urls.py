@@ -12,6 +12,7 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path('', include('home.urls')),
     path('home/', include('home.urls')),
+    path('privacy-policy', views.privacy_policy, name='privacy-policy'),
     path('logout/',RedirectView.as_view(url = '/admin/logout/')),
 
 

@@ -1,0 +1,9 @@
+
+{% block body %}
+
+<div class="container text-center" >
+    {% for rs in header %}
+    {{rs.privacy_policy |  safe}}
+    {% endfor %}
+</div>
+{% endblock body %}

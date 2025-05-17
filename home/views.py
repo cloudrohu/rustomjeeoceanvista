@@ -48,3 +48,12 @@ def index(request):
         'gallery':gallery,
     }
     return render(request,'index.html',context)
+
+def privacy_policy(request): 
+    header = Setting.objects.all().order_by('-id')[0:1]  
+
+    context={
+        'header':header,
+    }
+    return render(request,'privacy_policy.html',context)
+        

@@ -1,6 +1,7 @@
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.db import models
-
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
 from django.forms import ModelForm, TextInput, Textarea
 from django.http import request
@@ -24,6 +25,8 @@ class Setting(models.Model):
     location = models.CharField(max_length=1150,)
     site_address= models.CharField(max_length=1150,blank=True,null=True)
     googletagmanager= models.CharField(max_length=1150,blank=True,null=True)
+    privacy_policy = RichTextField(blank=True,null=True)
+    
     
     def __str__(self):
         return self.title    
