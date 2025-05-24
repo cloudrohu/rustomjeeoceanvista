@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'adminlte3_theme',
 
     'home.apps.HomeConfig',
+    'response.apps.ResponseConfig',
 
 
     'django.contrib.admin',

@@ -1,5 +1,4 @@
 from django.contrib import admin
-
 from .models import *
 
 # Register your models here. 1
@@ -53,15 +52,6 @@ admin.site.register(Gallery, GalleryAdmin)
 
 
 
-class ContactMessageAdmin(admin.ModelAdmin):
-    list_display = ['id','name','mobile', 'subject', 'update_at','status','note','message','email','ip',]
-    list_editable = ['status','note']
-    readonly_fields =['ip']
-    list_filter = ['status']
-
-
-admin.site.register(ContactMessage,ContactMessageAdmin)
-
 
 # Register your models here. 8
 class BookingopenAdmin(admin.ModelAdmin):
@@ -87,4 +77,5 @@ admin.site.register(Maharera, MahareraAdmin)
 class ReraaditionalAdmin(admin.ModelAdmin):
     list_display = ['id','project_registered','Government_RERA_Authorised_Advertiser','RERA_Project_Registration_No','Site_Address','Contact_Us','Disclaimer']
 admin.site.register(Reraaditional, ReraaditionalAdmin)
+
 

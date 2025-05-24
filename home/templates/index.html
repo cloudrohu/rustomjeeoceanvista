@@ -2,357 +2,410 @@
 {% load static %}
 {% block body %}
 {% for rs in header %}
-<main class="pload">
-    <style>
-        .card-d-custom {
-            width: 95%;
-            justify-content: center;
-            text-align: center;
-            margin: 0 auto 15px;
-        }
-    </style>
-    <div id="home" class="carousel slide micro-main-slider" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#home" data-slide-to="0" class="active"></li>
-            <li data-target="#home" data-slide-to="1"></li>
-        </ol>
-        <div class="carousel-inner">
-            {% for rs in slider %}
-            <div class="carousel-item lazyloaded">
-                <div class="mobileview"><img alt="Rustomjee Ocean Vista" width="1200" height="400" class="d-block micro-main-slider-img" src="{{rs.web_image.url}}" fetchpriority="high" /></div>
-            </div>
 
-            {% endfor %}
-            
-        </div>
-    </div>
-
-    
+<style>
+@media (max-width: 768px) {
+  .mobile-img {
+    height: 300px !important;
+  }
+}
+</style>
 
 
+<style>
+.map-container iframe {
+    width: 100% !important;
+    height: 450px;
+    border: 0;
+    display: block;
+}
 
+@media (max-width: 768px) {
+    .map-container iframe {
+        height: 300px;
+    }
+}
+</style>
 
-
-      {% for rs in bookingopen %}
-
-    <div class="info-box overflow-hidden">
-        <!--<span class="pro-status">Booking Open: Limited Time Only</span>-->
-        <div class="wrapper offer-bg-animation">
-            <span class="zoom-in-zoom-out padding10">Booking Open: Limited Time Only</span>
-        </div>
-        <h1 class="pro-title">
-            {{rs.project_name}}
-
-        </h1>
-        <div style="flex-wrap: wrap; display: inline-flex;padding-bottom: 10px;">
-            <span class="pro-add">At {{rs.at}}</span>
-            <span class="pro-dev">by {{rs.by}}</span>
-        </div>
-        <div class="card-d card-d-custom">
-            <div>
-                <span class="heading2">Land Parcel </span>
-                <span class="heading1">{{rs.landp_arcel}}</span>
-            </div>
-            <div>
-                <span class="heading2">Floors </span>
-                <span class="heading1">{{rs.floors}}</span>
-            </div>
-            <div>
-                <span class="heading2">Possession </span>
-                <span class="heading1">{{rs.possession}}</span>
-            </div>
-        </div>
-        <span class="d-block mb-1 text-capitalize of-box offer-bg-animation">
-          <span class="offer-text-outer"> <span class="offer-text"> 
-         {{rs.spot_booking_offers}}<br/> {{rs.early_buy_discounts}} <br/> {{rs.flexipay_for_first}}</span>
-        </span>
-        </span>
-        <span class="d-block" style="font-size: 14px; width: 100%; background: transparent; font-weight: bold; text-align: center; color: #fff;">
-        
-        </span>
-        <span class="pro-tag-line"> Luxurious<b> {{rs.luxurious}} </b>  Starts  at</span> <span class="pro-price">₹ {{rs.priceing}}  <small style="font-size:16px;">  Onwards</small> </span>
-        <button class="btn btn-info micro-form-btn enqModal effetMoveGradient effectScale" data-form="lg" data-title="Download Brochure" data-btn="Download Now" data-enquiry="Download Brochure Left Panel" data-redirect="enquiry" data-toggle="modal" data-target="#enqModal">
-        Download Brochure
-    </button>
+    <div class="main-container d-flex">
+        <main class="left-section">
+            <div class="page-wrapper">
+                <!-- xxxxxxxxxxxx Top Section xxxxxxxxxxxx -->
+                <section id="home">
+                    <div class="container-fuild">
+                       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    {% for rs in slider %}
+    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+      <img src="{{rs.web_image.url}}" style="height: 650px; width: auto;" class="mobile-img" class="d-block w-100" alt="...">
     </div>
     {% endfor %}
-    <section class="section shadow-sm lazyload" id="overview">
-        {% for rs in welcome %}
-    <h2 class="d-block section-heading color-primary text-capitalize">Welcome to {{rs.title}}</h2>
-        <p>{{rs.details}}   
-        </p>
-        <p><span class="more-cont" style="display: none;"><span class="d-block">{{rs.readmore}}</span>
-        </span> <a href="#!" class="btn btn-link btn-sm more">Read more</a></p>
-        {% endfor %}
-        <button class="btn btn-info micro-form-btn effetMoveGradient enqModal" data-form="md" data-title="Download Brochure" data-btn="Download Now" data-enquiry="Download Brochure Welcome Text" data-redirect="brochure" data-redirect-file="brochure.pdf" data-toggle="modal"
-            data-target="#enqModal">
-        <span class="d-inline-block fa fa-download mr-1 animated slideInDown infinite"></span> Download Brochure
-        </button>
-    </section>
     
-    <section class="section shadow-sm lazyload" id="pricing">
-        <span class="section-link"></span>
-        <span class="head text-capitalize">Price</span>
-        <div class="row">
-            <div class="col-md-8">
-                <table class="table table-striped table-borderless border micro-price-table table-pricing">
-                    <thead>
-                        <tr>
-                            <th scope="col" class="border border-bottom-0 mb-w">Type</th>
-                            <th scope="col" class="border border-bottom-0 mb-w">Carpet Area</th>
-                            <th scope="col" class="border border-bottom-0 border-right-0">Price</th>
-                            <th scope="col"></th>
-                        </tr>
-                    </thead>
-                    {% for rs in configuration %}
-                    <tbody>
-                        <tr>
-                            <td class="border border-left-0 border-top-0 border-bottom-0 price-type">{{rs.typology}}</td>
-                            <td class="border border-left-0 border-top-0 border-bottom-0 price-carpet">
-                                {{rs.rera_carpet_area}}
-                                <small class="d-inline-block d-md-none">(Carpet Area)</small></td>
-                            <td class="price-amt"><i class="mi mi-rs-light"></i> {{rs.price}}
-                            </td>
-                            <td>
-                                <button class="btn btn-sm btn-info effetGradient effectScale enqModal" data-form="lg" data-title="Send me costing details" data-btn="Send Now" data-enquiry="Price Breakup" data-redirect="floorplan" data-toggle="modal" data-target="#enqModal">Price Breakup</button>
-                            </td>
-                            
-                        </tr>
-                    
-                    </tbody>
-                    {% endfor %}
-                    
-                </table>
-            </div>
-            <div class="col-md-4">
-                <a href="#" class="text-decoration-none enqModal" data-form="lg" data-title="Send me costing details" data-btn="Send Now" data-enquiry="Complete Costing Details" data-toggle="modal" data-target="#enqModal">
-                    <div class="at-property-item shadow-sm border border-grey mt-1">
-                        <div class="at-property-img lazyloaded" data-expand="-1"><img alt="costing sheet" data-sizes="auto" class="w-100 lazyautosizes ls-is-cached lazyloaded ls-inview" sizes="304px" src='{% static '' %}assets/img/costing.jpg'>
-                            <div class="at-property-overlayer"></div> <span class="btn btn-default at-property-btn">Enquire Now</span> </div>
-                        <div class="at-property-dis effetGradient">Complete Costing Details</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-    <section class="section shadow-sm lazyload" id="sitefloorplan" data-script="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js " data-link="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-        <span class="section-link"></span>
-        {% for rs in welcome %}
-        <h2 class="head text-capitalize">Site &amp; Floor Plan of {{rs.title}}</h2> <span class="d-block section-heading-sub text-capitalize">Master Plan</span>
-        {% endfor %}
-        <div class="masterplan-box">
-            <a href="#" class="text-decoration-none enqModal" data-form="lg" data-title="Send me plan details" data-btn="Send Now" data-enquiry="Get Master Plan" data-redirect="enquiry" data-toggle="modal" data-target="#enqModal">
-                <div class="at-property-item mt-1">
-                    <div class="at-property-img master-plan text-center">
-                        <img alt="Master Plan" data-sizes="auto" class="lazyload shadow-sm border border-grey" src="{% static '' %}assets/img/floorplan/masterplans.webp" />
-                        <div class="at-property-overlayer"></div>
-                        <span class="at-property-btn">View Master Plan </span>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <span class="d-block section-heading-sub text-capitalize">Floor Plan</span>
-        <button class="btn btn-sm btn-info effetGradient effectScale enqModal" data-form="lg" data-title="Send me costing details" data-btn="Send Now" data-enquiry="Price Breakup" data-redirect="floorplan" data-toggle="modal" data-target="#enqModal">On Request</button>
-        <div class="row row-cols-1 row-cols-md-3">
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 
-        </div>
-    </section>
-    <section class="section shadow-sm lazyload" id="amenities">
-        <span class="section-link"></span>
-        <div class="row">
-            <div class="col-md-8">
-                {% for rs in welcome %}
-                <h2 class="head text-capitalize">Amenities of {{rs.title}}</h2>
-                {% endfor %}
-            </div>
-            <div class="col-md-4">
-                <button class="btn btn-info micro-form-btn enqModal effetMoveGradient effectScale float-lg-right mx-sm-auto  d-none d-lg-block" data-form="lg" data-title="Download Amenities" data-btn="Send Now" data-enquiry="Download Amenities" data-redirect="floorplan"
-                    data-toggle="modal" data-target="#enqModal">Download Amenities</button>
-            </div>
-        </div>
-        <div id="ami-3" class="ami-3 owl-carousel owl-theme">
-            {% for rs in amenities %}
-            <div class="item-wrp">
-                <div class="ami_sec"><img alt="Alfresco Lounge" data-src="{{rs.icone.url}}" style="height: 190px;" loading="lazy" class="lazyload" fetchpriority="low" />
-                    <p>{{rs.title}}</p>
-                </div>
-                <div class="ami_sec"><img alt="Banquet Hall" data-src="{{rs.icone2.url}}" style="height: 190px;" loading="lazy" class="lazyload" fetchpriority="low" />
-                    <p>{{rs.title2}}</p>
-                </div>
-            </div>
-            {% endfor %}
+</div>
 
-        </div>
-        <div class="col-12">
-            <p></p>
-            <button class="btn btn-info micro-form-btn enqModal effetMoveGradient effectScale float-lg-right mx-sm-auto d-lg-none" data-form="lg" data-title="Download Amenities" data-btn="Send Now" data-enquiry="Download Amenities" data-redirect="floorplan" data-toggle="modal"
-                data-target="#enqModal">Download Amenities</button></div>
-    </section>
-    <section class="section shadow-sm lazyload" id="gallery">
-        <span class="section-link"></span>
-        <div class="row">
-            <div class="col-md-8">
-                {% for rs in welcome %}
-                <h2 class="head text-capitalize">Gallery of  {{rs.title}}</h2>
-                {% endfor %}
-            </div>
-            <div class="col-md-4"><button class="btn btn-info micro-form-btn enqModal effetMoveGradient effectScale float-lg-right mx-sm-auto  d-none d-lg-block" data-form="lg" data-title="Download Gallery" data-btn="Send Now" data-enquiry="Download Gallery" data-redirect="floorplan"
-                    data-toggle="modal" data-target="#enqModal">Download Gallery</button></div>
-        </div>
-        <div class="row">
-            {% for rs in gallery %}
-            <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-2"><a data-fancybox="gallery-0" href="{{rs.web_image.url}}" aria-label="Gallery Image1"> <img alt="Swimming Pool" data-src="{{rs.web_image.url}}" class="lazyload gallery-thumb" /> </a></div>
-            {% endfor %}
-            
-        </div>
-        <div class="col-12">
-            <p></p>
-            <button class="btn btn-info micro-form-btn enqModal effetMoveGradient effectScale float-lg-right mx-sm-auto d-lg-none" data-form="lg" data-title="Download Gallery" data-btn="Send Now" data-enquiry="Download Gallery" data-redirect="floorplan" data-toggle="modal"
-                data-target="#enqModal">Download Gallery</button>
-        </div>
-    </section>
-    <style>
-        iframe {
-            width: 100%;
-            height: 38vh;
-            border: 2px solid #d7d7d7;
-        }
+                        <div class="project-details">
+                            <p class="text-center mb-1 on-rera">New Launch</p>
+                            <p class="text-center mb-1 non-rera">Coming Soon</p>
+                            <h1 class="text-center mb-1" style="font-weight: 600;text-transform: uppercase;"> Mission Blue Zone</h1>
+                            <h6 class="text-center mb-2" style="color: #353535;">By The House Of Abhinandan Lodha</h6>
+                            <h6 class="text-center mb-2" style="font-size:15px; color: #6e6e6e;">At Neral, Raigad, Maharashtra</h6>
 
-        @media only screen and (max-width: 1024px) {
-            iframe {
-                width: 100%;
-                height: 32vh;
-                border: 2px solid #d7d7d7;
-            }
-        }
-
-        @media only screen and (max-width: 992px) {
-            iframe {
-                width: 100%;
-                height: 18vh;
-                border: 2px solid #d7d7d7;
-            }
-        }
-
-        @media only screen and (max-width: 800px) {
-            iframe {
-                width: 100%;
-                height: 26vh;
-                border: 2px solid #d7d7d7;
-            }
-        }
-
-        @media only screen and (max-width: 768px) {
-            iframe {
-                width: 100%;
-                height: 20vh;
-                border: 2px solid #d7d7d7;
-            }
-        }
-
-        @media only screen and (max-width: 500px) {
-            iframe {
-                width: 100%;
-                height: 50vh;
-                border: 2px solid #d7d7d7;
-            }
-        }
-    </style>
-    <section id="address_section" class="section shadow-sm"> </section>
-    <section class="section shadow-sm lazyloaded" id="sitevisit">
-        <span class="section-link"></span>
-        <span class="head text-capitalize">Virtual Tour Request</span>
-        <a href="#" class="enqModal" data-form="lg" data-title="Virtual Site Visit" data-btn="Start Tour" data-enquiry="Virtual Site Visit
-" data-redirect="virtualtour" data-toggle="modal" data-target="#enqModal">
-            <div class="at-property-item my-2 pt-md-0">
-                <div class="at-property-img vsv-img lazyloaded" data-expand="-1">
-                    <div class="d-block">
-                        {% for rs in header %}
-                        <img alt="Rustomjee Ocean Vista" class="img-responsive" src="{{rs.virtual_site_visit.url}}" width="100%" fetchpriority="low" />
-                        {% endfor %}
-                    </div>
-                    <div class="vsv-text-bk">
-                        <div class="vsv-text-bg">
-                            <div class="vsv-icon lazyloaded"></div>
-                            <span class="text-uppercase h1 font-weight-bold mb-0 d-none d-lg-block">Virtual Site Visit</span>
-                            {% for rs in welcome %}
-                            <span class="text-capitalize text-center d-none d-lg-block"> {{rs.title}} </span>
-                            {% endfor %}
+                            <div class="offerBox animatedtext">
+                                <div class="innerBox">
+                                    <p class="mb-0">◆ Avail Early Bird Offers</p>
+                                </div>
+                            </div>
+                            <p class="offer-info-text text-center mb-0">Premium Villa Land Starts</p>
+                            <div class="price-text"><span class="color-imp">₹ </span><span class="price-sub-text">63.90 Lacs* </span> <span class="price">  All Incl.</span> </div>
+                            <button id="banner-enquiry-button" data-id="Enquiry" type="button" class="custom-btn btn btn-block mx-auto data-id-btn on-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now">Enquire Now</button>
                         </div>
                     </div>
-                </div>
-            </div>
-            <span class="text-center d-block d-lg-none content-clr">Virtual Site visit</span>
-        </a>
-    </section>
-    <section class="section shadow-sm lazyload" id="developer">
-        <div class="d-block pt-2 pb-1 text-center"><img alt="Rustomjee Ocean Vista Logo" src="{{rs.logo.url}}" loading="lazy" style="max-width: 100%; height: 65px; display: inline-block;" /></div>
-        {% for rs in about_us %}
-        <div class="row">
-            <div class="col-md-8">
-                <span class="d-block section-heading-sub text-capitalize">About {{rs.title}}</span>
-            </div>
-            <div class="col-md-4">
-                <div class="float-md-right d-none d-lg-block">
-                    <button class="btn btn-info micro-form-btn enqModal effetMoveGradient effectScale drift-open-chat-desktop" data-form="lg">
-                    Chat with us
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <p>{{rs.details}}</p>
-            {% endfor %}
-
-
-        <span class="d-block section-heading-sub1 text-capitalize">RERA Information</span>
-        <div class="row">
-            {% for rs in maharera %}
-            <div class="col-md-3">
-                <div class="rera-box">
-                    <div class="rera-img">
-                        <img src="{{rs.qr_image.url}}" loading="lazy" style="max-width: 100%; height: 100px; display: inline-block;" alt="P51800076673" />
+                </section>
+                <div class="mob-form d-sm-block d-md-none d-lg-none">
+                    <div class="call-back-section text-center pt-3 pb-3" style="border-bottom: 1px solid #DDD;">
+                        <h3 class="mb-0">Pre-Register here for Best Offers</h3>
                     </div>
-                    <div class="rera-details">
-                        <p>{{rs.title}} - <b>{{rs.maharera_no}}</b></p>
+                    <div class="form-section p-4">
+                        <form class=" text-center" name="Pre-Register">
+                            <div class="form-group mb-3">
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Your Name here..." name="name" required>
+                                <span class="error">Name field is required</span>
+                            </div>
+                            <div class="form-group mb-4">
+                                <input type="number" id="mobile" class="form-control" placeholder="Phone Number" name="mobile" required>
+                                <span class="error">Mobile field is required</span>
+                            </div>
+                            <div>
+                                <input type="hidden" name="form_name" id="form_name1" class="form-control form_name" value="Pre-Register Mobile">
+                                <input type="hidden" id="website_url1" class="website_url" name="website_url">
+                            </div>
+                            <div class="form-group acceptance mb-3" style="font-size: 10px;">
+                                <label class="form-check-label text-start">
+										<input type="checkbox" checked class="form-check-input">
+										<span class="text on-rera">I Consent to The Processing of Provided Data According To <a href="Privacy-Policy.html" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a>, I Authorize Prop Solutions 4 U Pvt. Ltd. and its representatives to Call, SMS, Email or WhatsApp Me About Its Products and Offers. This Consent Overrides Any Registration For DNC/NDNC. </span>
+											<span class="text non-rera">Please be informed that this website is not intended to facilitate any sales transactions. I understand and acknowledge that the project I am interested in hasn't yet secured RERA clearance. The primary purpose of this website is to generate interest and gather information. By providing my data, I consent to its use in accordance with the <a href="Privacy-Policy.html" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a></span>
+									</label>
+                            </div>
+                            <button id="mobile-pre-register-button" data-id="Pre-Register Mobile" class="btn preRegisterBtn data-id-btn on-rera" onclick="submitForm(event, 'Pre-Register')">Pre-Register Now</button>
+                        </form>
                     </div>
                 </div>
-            </div>
-        </div>
-        <span class="pro-rera text-center-mob">{{rs.details}}</span>
-        <p></p>
-        {% endfor %}
-        
-    <div class="float-lg-right mx-sm-auto d-lg-none">
-        <button class="btn btn-info micro-form-btn enqModal effetMoveGradient effectScale drift-open-chat-mobile" data-form="lg">
+                <!-- xxxxxxxxxxxx Overview section xxxxxxxxxxxx -->
+                <section class="sec1" id="overview">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-7 col-lg-7 col-sm-12">
+                                <div class="overview-data">
+                                    <h1>About Mission Blue Zone Neral</h1>
+                                    <p class="overview-info">Welcome to Mission Blue Zone at Neral – an extraordinary 80-acre sanctuary of life, health, and harmony brought to you by The House of Abhinandan Lodha®. Just two hours from the vibrant heartbeat of Mumbai, this one-of-a-kind
+                                        development takes inspiration from the world’s legendary Blue Zones - places where people don’t just live longer, but live better. Envisioned as India’s first Blue Zone-branded land development, this haven fuses
+                                        nature’s tranquillity with mindful modernity, offering lush green landscapes, soulful architecture, and a lifestyle deeply rooted in joy, connection, and longevity.</p>
+                                    <p>
+                                        <span class="moreText" data-hit="more-overview">Designed by the globally acclaimed Enzyme APD, the township blooms with immersive, sensory-rich experiences - think cascading waterfalls, forest trails, wellness sanctuaries, art corners, and soulful gathering spaces - all harmoniously interwoven into the land’s natural rhythm. As part of the booming Mumbai 3.0 corridor and backed by unprecedented infrastructural expansion, Mission Blue Zone isn’t just a property - it’s a poetic shift towards a more conscious, balanced, and beautiful way of living. An ode to purpose and prosperity, this is where your legacy begins with New Generation Land® - secure, serene, and soulfully yours. </span>
+                                       <span data-target="-overview" class="button moreBtn viewmore" style="color:#1773b5">Read more <i class="fa fa-chevron-down"></i></span>
+                                    </p>
+                                    <button id="request-brochure-button" type="button" class="custom-btn data-id-btn on-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Brochure"><i class="fa-solid fa-download"></i>&nbsp;&nbsp;Request Brochure</button>
+                                    <button id="request-brochure-button" type="button" class="custom-btn data-id-btn non-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Brochure"> Express Your Interest</button>
+                                </div>
+                            </div>
+                            <div class="col-xl-5 col-lg-5 col-sm-12 text-center ps-0 pe-0">
+                                <img src="{%  static '' %}assets/images/about/About.webp" width="100%" class="data-id-btn" data-id="Project Video" alt=" ">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- xxxxxxxxxxxx Overview section End xxxxxxxxxxxx -->
+                <!-- xxxxxxxxxxxx Highlight section xxxxxxxxxxxx -->
+                <section class="sec2" id="highlights">
 
-    Chat with us.
-    </button>
-            </div>
-        </section>
-        <section style="text-align:justify;background:#f7f7f7 !important;" class="section shadow-sm lazyload" id="developer">
-            <small>
-    <style>
-    .newlist { list-style: none; line-height: 25px; padding-left: 22px; text-align: left; }
-    .newlist li:before { content: '✓'; font-weight: 800;  margin-right: 10px;  font-size: 13px;  margin-left: -22px; }
-	</style>
-    {% for rs in reraaditional %}
-	<ul class="newlist">
-        <li>{{rs.project_registered}} </li>
-        <li>{{rs.Government_RERA_Authorised_Advertiser}}.</li>
-        <li>{{rs.RERA_Project_Registration_No}}</li>
-        <li><b>Site Address:</b> {{rs.Site_Address}}</li>
-        <li><b>Contact Us:</b>{{rs.Contact_Us}}</li>
-         
-	</ul>
-    <b>Disclaimer:</b>
-    {{rs.Disclaimer}}
-    <hr>
-    {% endfor %}    
-    <p style="text-align:center;">Copyright &copy; 2025 | <a aria-label="About Terms & Conditions" href="terms-conditions.php">Terms & Conditions</a> | <a aria-label="About Privacy Policy" href="{% url "privacy-policy" %}">Privacy Policy</a> | <a aria-label="About Cookies Policy" href="cookies-policy.php">Cookies Policy</a> </p>
-    </small>
-        </section>
-    </main>
-    {% endfor %}
+                    <div class="container mx-auto">
+                        <h1 class="section-title">Mission Blue Zone - Highlights </h1>
+
+                        <div class="row">
+
+                            <div class="col-xl-6 col-lg-4 col-sm-12 mb-3">
+                                <div class="highlightData">
+                                    <div class="iconBox"> <i class="fa-solid fa-check-double"></i> </div>
+                                    <p>Located in Neral, part of fast-growing Mumbai 3.0 corridor </p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-xl-6 col-lg-4 col-sm-12 mb-3">
+                                <div class="highlightData">
+                                    <div class="iconBox"> <i class="fa-solid fa-check-double"></i> </div>
+                                    <p>Car-lite layout, walkable zones, and sustainable urban planning</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-4 col-sm-12 mb-3">
+                                <div class="highlightData">
+                                    <div class="iconBox"> <i class="fa-solid fa-check-double"></i> </div>
+                                    <p>80-acre Blue Zone-inspired land development, 2 hrs from Mumbai</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-4 col-sm-12 mb-3">
+                                <div class="highlightData">
+                                    <div class="iconBox"> <i class="fa-solid fa-check-double"></i> </div>
+                                    <p>India’s first wellness-focused land project rooted in global Blue Zone philosophy</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-4 col-sm-12 mb-3">
+                                <div class="highlightData">
+                                    <div class="iconBox"> <i class="fa-solid fa-check-double"></i> </div>
+                                    <p>Features experiential zones with art, waterfalls, fire pits & nature trails</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-4 col-sm-12 mb-3">
+                                <div class="highlightData">
+                                    <div class="iconBox"> <i class="fa-solid fa-check-double"></i> </div>
+                                    <p>Designed by globally acclaimed Enzyme APD (250+ sustainable projects)</p>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-6 col-lg-4 col-sm-12 mb-3">
+                                <div class="highlightData">
+                                    <div class="iconBox"> <i class="fa-solid fa-check-double"></i> </div>
+                                    <p>Smart investment zone with ₹4.7L Cr infra boost & 3.6x land appreciation</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-4 col-sm-12 mb-3">
+                                <div class="highlightData">
+                                    <div class="iconBox"> <i class="fa-solid fa-check-double"></i> </div>
+                                    <p>Part of New Generation Land® – secure, transparent, future-ready</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+                <!-- xxxxxxxxxxxx floor plan xxxxxxxxxxxx -->
+                <section class="sec1" id="pricing">
+                    <div class="container sec-pd sec-price">
+                        <div class="row gx-md-5">
+                            <div class="col-12">
+                                <h1 class="section-title on-rera">Mission Blue Zone - Area & Pricing</h1>
+                                <div class="">
+                                    <table class="table table-borderless table-striped table-pricing text-center">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Type</th>
+                                                <th scope="col">Area</th>
+                                                <th scope="col">Price (All-Incl)</th>
+                                                <th scope="col"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for rs in configuration %}
+                                            <tr>
+                                                <td class="price">{{rs.typology}}</td>
+                                                <td>{{rs.rera_carpet_area}}</td>
+                                                <td class="price"><span style="font-family: sans-serif;">₹</span>{{rs.price}}</td>
+                                                <td> <a href="javascript:void(0);" class="btn text-white my-1 enquiryBtn1 pricing-btn-1 custom-btn data-id-btn on-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Costing Details">Complete Costing Details</a> </td>
+                                                
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- xxxxxxxxxxxx floor plan end xxxxxxxxxxxx -->
+                <section class="sec2" id="floor-plan">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 layout-plan text-center">
+                                <div>
+                                    <h1 class="section-title on-rera">Master Plan Layout</h1>
+                                </div>
+                                <img src="{%  static '' %}assets/images/floor-plan/MasterPlan.webp" alt="" class="img-fluid">
+                                <div class="btn_box text-center"> <a href="#" class="btn mt-4 custom-btn data-id-btn on-rera mx-auto" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Master Layout Plan"> Request Master Layout Plan </a>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 layout-plan text-center">
+                                <div>
+                                    <h1 class="section-title on-rera">Unit Plan Layout</h1>
+                                </div>
+                                <img src="{%  static '' %}assets/images/floor-plan/UnitPlan.webp" alt="" class="img-fluid">
+                                <div class="btn_box text-center"> <a href="#" class="btn mt-4 custom-btn data-id-btn on-rera mx-auto" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Unit Layout Plan"> Request Unit Layout Plans </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- xxxxxxxxxxxx floor plan end xxxxxxxxxxxx -->
+                <section class="sec1" id="amenities">
+                    <div class="container">
+                        <h1 class="section-title on-rera">Luxurious Amenities</h1>
+                        <div class="slick-wrapper">
+                            <div class="inline-flex align-items-center">
+                                <div id="slick1">
+                                    {% for rs in amenities %}
+                                    <div class="slide-item">
+                                        <img src="{{rs.icone.url}}" style="height: 250px;" alt="">
+                                        <p>{{rs.title}}</p>
+                                    </div>
+                                    <div class="slide-item">
+                                        <img src="{{rs.icone2.url}}" style="height: 250px;" alt="">
+                                        <p>{{rs.title2}}</p>
+                                    </div>
+                                   {% endfor %}
+                                    <!--<div class="slide-item">-->
+                                    <!--	<img src="{%  static '' %}assets/images/amenities/Kids play area.webp" alt="">-->
+                                    <!--	<p>Kids play area</p>-->
+                                    <!--</div>-->
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button id="request-amenities-button" type="button" class="btn custom-btn data-id-btn on-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Amenities">Request All Amenities</button>
+                            <button id="request-amenities-button" type="button" class="btn custom-btn data-id-btn non-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Amenities">Express Your Interest</button>
+                        </div>
+                    </div>
+                </section>
+                <!-- xxxxxxxxxxxx Amenities section end end xxxxxxxxxxxx -->
+                <!-- xxxxxxxxxxxx Gallery section xxxxxxxxxxxx -->
+                <section class="sec2" id="gallery">
+                    <div class="container wow fadeInUp">
+                        <!-- data-wow-delay="0.1s" -->
+                        <h1 class="section-title">Project Gallery</h1>
+                        <div class="content-gallery">
+                            <div class="gallery js-gallery">
+                                {% for rs in gallery %}
+                                <div class="gallery-item">
+                                    <div class="gallery-img-holder js-gallery-popup">
+                                        <img src="{{rs.web_image.url}}" style="height: 175px;" alt="" class="gallery-img">
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- xxxxxxxxxxxx Gallery section end xxxxxxxxxxxx -->
+                <section class="sec1" id="connectivity">
+                    <div class="container" >
+                        <h1 class="section-title">Location Advantage</h1>
+                       <div class="row mt-2 px-0 mx-0"> <!-- Remove padding -->
+                            <div class="map-container w-100">
+                                {{ rs.location|safe }}
+                            </div>
+                        </div>
+                        <div class="row pt-30 mb-3">
+                            <div class="col-xl-12 col-lg-12 col-sm-12 text-dark mt-3 amenities-img">
+                                <!-- location-img-->
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-sm-12 text-dark amenities-info mt-3 ps-2 pe-2">
+                                <div id="exTab1" class="fuild-container">
+                                    <nav class="nav nav-pills">
+                                        <a class="nav-link active" data-bs-toggle="pill" href="#Connectivity" role="tab" aria-selected="false">
+                                            <h6 class="subtitle inventory">Connectivity</h6>
+                                        </a>
+                                        <!--<a class="nav-link" data-bs-toggle="pill" href="#education-hub" role="tab" aria-selected="false">-->
+                                        <!--	<h6 class="subtitle inventory">Education Hub</h6>-->
+                                        <!--</a>-->
+                                        <!--<a class="nav-link" data-bs-toggle="pill" href="#HealthCare" role="tab" aria-selected="false">-->
+                                        <!--	<h6 class="subtitle inventory">Healthcare</h6>-->
+                                        <!--</a>-->
+                                        <!--<a class="nav-link " data-bs-toggle="pill" href="#techpark" role="tab">-->
+                                        <!--	<h6 class="subtitle inventory">Tech Parks</h6>-->
+                                        <!--</a>-->
+                                        <!--<a class="nav-link " data-bs-toggle="pill" href="#mall" role="tab">-->
+                                        <!--	<h6 class="subtitle inventory">Malls/ Hotels/ Shopping centers</h6>-->
+                                        <!--</a>-->
+                                    </nav>
+                                    <div class="tab-content clearfix">
+                                        <div class="tab-pane fade active show" id="Connectivity">
+                                            <ul>
+                                                {% for rs in location %}
+                                                <li>{{rs.title}}</li>
+                                                {% endfor %}
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-2">
+                                <button id="request-location-button" type="button" class="btn mt-2 custom-btn data-id-btn on-rera mx-auto d-block" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Location Map">Request Location Details</button>
+                                <button id="request-location-button" type="button" class="btn mt-2 custom-btn data-id-btn non-rera" data-bs-target="#enquire-modal" data-bs-toggle="modal" data-bs-whatever="Enquire Now" data-id="Location Map">Express Your Interest</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- xxxxxxxxxxxx Connectivity section end xxxxxxxxxxxx -->
+                <!-- xxxxxxxxxxxx Contact section xxxxxxxxxxxx -->
+                <section id="contact">
+                    <div class="container-fluid full-width"></div>
+                    <div class="container">
+                        <div class="contact-inner">
+                            <div class="container contact-data">
+                                <div class="row">
+                                    <div class="col-lx-6 col-lg-6 col-sm-12 image-carousel1 ps-0 pe-0">
+                                        <img src="{%  static '' %}assets/images/contact/contact.webp" class="img-fluid" />
+                                    </div>
+                                    <div class="col-lx-6 col-lg-6 col-sm-12 form-data">
+                                        <h2 class="text-left ms-4 mt-4 mb-0" style="font-size: 24px;">Schedule a Site Visit</h2>
+                                        <div class="form">
+                                            <form name="schedule-site">
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-sm-12 forms-input-fields">
+                                                        <i class="fa-solid fa-user"></i>
+                                                        <input type="text" name="name" class="form-control ms-0 me-0" required placeholder="Name*">
+                                                        <span class="error">Name field is required</span>
+                                                    </div>
+                                                    <div class="col-lg-12 col-sm-12 forms-input-fields">
+                                                        <i class="fa-solid fa-phone"></i>
+                                                        <input type="number" name="mobile" id="mobile" class="form-control ms-0 me-0" required placeholder="Mobile*">
+                                                        <span class="error">Mobile field is required</span>
+                                                    </div>
+                                                    <div>
+                                                        <input type="hidden" name="form_name" id="form_name3" class="form-control form_name" value="Contact Site Visit">
+                                                        <input type="hidden" id="website_url3" class="website_url" name="website_url">
+                                                    </div>
+                                                    <div class="form-group acceptance mb-2" style="font-size: 10px;">
+                                                        <label class="form-check-label text-start">
+															<input type="checkbox" checked class="form-check-input">
+															<span class="text on-rera">I Consent to The Processing of Provided Data According To <a href="Privacy-Policy.html" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a>, I Authorize Prop Solutions 4 U Pvt. Ltd. and its representatives to Call, SMS, Email or WhatsApp Me About Its Products and Offers. This Consent Overrides Any Registration For DNC/NDNC. </span>
+															<span class="text non-rera">Please be informed that this website is not intended to facilitate any sales transactions. I understand and acknowledge that the project I am interested in hasn't yet secured RERA clearance. The primary purpose of this website is to generate interest and gather information. By providing my data, I consent to its use in accordance with the <a href="Privacy-Policy.html" style="color:#007bff"> Privacy Policy | </a> <a href="terms-conditions.html" style="color:#007bff;"> Terms &amp; Conditions</a></span>
+														</label>
+                                                    </div>
+                                                    <button id="schedule-site-visit-button" type="submit" name="submit" class="btn ms-2 custom-btn btn-hover text-white data-id-btn" style="width: auto;" data-id="Contact Site Visit" onclick="submitForm(event, 'schedule-site')">Submit</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-lx-6 col-lg-6 col-sm-12 ps-0 pe-0 image-carousel m-0">
+                                        <img src="{%  static '' %}assets/images/contact/contact.webp" class="img-fluid" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- xxxxxxxxxxxx Contact section end xxxxxxxxxxxxxx -->
+                <a id="discovery" target="_blank" class="whatsaapBtn d-none d-lg-block on-rera" aria-label="WhatsApp" href="https://api.whatsapp.com/send?phone=91{{rs.cuntact_no}}&text=Hey There, I would like to explore further details About The House Of Abhinandan Lodha At Neral, Raigad, Maharashtra. Please Share Details.">
+					<span>
+						<img src="{%  static '' %}assets/images/icons/whatsapp.webp" width="32" alt=" ">
+					</span>
+				</a>
+
+{% endfor %}
 
 {% endblock body %}

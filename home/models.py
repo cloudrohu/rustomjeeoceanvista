@@ -8,6 +8,8 @@ from django.http import request
 from django.utils.safestring import mark_safe
 
 
+
+
 # Create your models here.
 
 class Setting(models.Model):
@@ -115,43 +117,6 @@ class Gallery(models.Model):
         verbose_name_plural='8. Gallery'
      
 
-class ContactMessage(models.Model):
-    STATUS = (
-        ('New', 'New'),
-        ('Read', 'Read'),
-        ('Closed', 'Closed'),
-        ('follow up', 'follow up'),
-    )
-    name= models.CharField(blank=False,max_length=20)
-    mobile= models.CharField(blank=False,max_length=20)
-    email= models.EmailField(blank=False,max_length=50)
-    subject= models.CharField(blank=False,max_length=50)
-    message= models.TextField(blank=False,max_length=255)
-    status=models.CharField(max_length=10,choices=STATUS,default='New')
-    ip = models.CharField(blank=True, max_length=20)
-    note = models.CharField(blank=True, max_length=100)
-    create_at=models.DateTimeField(auto_now_add=True)
-    update_at=models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.name
-    
-    class Meta:
-        verbose_name_plural='1. Responce'
-
-class ContactForm(ModelForm):
-    class Meta:
-        model = ContactMessage
-        fields = ['name', 'email', 'subject','message']
-        widgets = {
-            'name'   : TextInput (attrs={'class': 'input','placeholder':'Name & Surname',} ),
-            'subject' : TextInput(attrs={'class': 'input','placeholder':'Subject'}),
-            'email'   : TextInput(attrs={'class': 'input','placeholder':'Email Address'}),
-            'message' : Textarea(attrs={'class': 'input','placeholder':'Your Message','rows':'5'}),
-        }
-
-
-
 class Bookingopen(models.Model):
     project_name = models.CharField(max_length=150,)
     at = models.CharField(max_length=255,)
@@ -172,7 +137,6 @@ class Bookingopen(models.Model):
     class Meta:
         verbose_name_plural='10. Booking Open'
 
-
 class Welcometo(models.Model):
     title = models.CharField(max_length=150)
     details= models.TextField(blank=False,max_length=5500)
@@ -183,7 +147,6 @@ class Welcometo(models.Model):
         
     class Meta:
         verbose_name_plural='11. Welcome To'
-
 
 class Location(models.Model):
     title = models.CharField(max_length=150)    
@@ -206,7 +169,6 @@ class Maharera(models.Model):
     class Meta:
         verbose_name_plural='13. Maharera'
 
-
 class Reraaditional(models.Model):
     project_registered = models.CharField(max_length=350)
     Government_RERA_Authorised_Advertiser = models.CharField(max_length=500)
@@ -219,4 +181,8 @@ class Reraaditional(models.Model):
         return self.project_registered    
         
     class Meta:
-        verbose_name_plural='14. RERA Aditional;'
+        verbose_name_plural='14. RERA Aditional'
+
+
+
+  
